@@ -217,12 +217,26 @@ class MobDeathListener implements Listener {
             // -=-=-=-=-
             if (mushroom_cow_variant == MushroomCow.Variant.RED) {
                 CreateAndDropHead(event, "красной грибной коровы",
-                        config.getDouble("mooshroom_head_drop_chance"),
-                        config.getString("red_mooshroom_head_drop_chance"));
+                        config.getDouble("red_mooshroom_head_drop_chance"),
+                        config.getString("red_mooshroom_head_texture"));
             } else if (mushroom_cow_variant == MushroomCow.Variant.BROWN) {
                 CreateAndDropHead(event, "коричневой грибной коровы",
-                        config.getDouble("mooshroom_head_drop_chance"),
-                        config.getString("brown_mooshroom_head_drop_chance"));
+                        config.getDouble("brown_mooshroom_head_drop_chance"),
+                        config.getString("brown_mooshroom_head_texture"));
+            }
+        }
+        // Снежный голем - 2
+        if (event.getEntityType() == EntityType.SNOWMAN) {
+            Snowman snowman = (Snowman) event.getEntity();
+            // -=-=-=-=-
+            if (snowman.isDerp()) {
+                CreateAndDropHead(event, "снежного голема",
+                        config.getDouble("snow_golem_head_drop_chance"),
+                        config.getString("snow_golem_head_texture"));
+            } else {
+                CreateAndDropHead(event, "снеговика",
+                        config.getDouble("snowman_head_drop_chance"),
+                        config.getString("snowman_head_texture"));
             }
         }
         // Корова
@@ -234,6 +248,16 @@ class MobDeathListener implements Listener {
         if (event.getEntityType() == EntityType.CHICKEN) {
             CreateAndDropHead(event, "курицы",
                     config.getDouble("chicken_head_drop_chance"), config.getString("chicken_head_texture"));
+        }
+        // Спрут
+        if (event.getEntityType() == EntityType.SQUID) {
+            CreateAndDropHead(event, "спрута",
+                    config.getDouble("squid_head_drop_chance"), config.getString("squid_head_texture"));
+        }
+        // Паук
+        if (event.getEntityType() == EntityType.SPIDER) {
+            CreateAndDropHead(event, "паука",
+                    config.getDouble("spider_head_drop_chance"), config.getString("spider_head_texture"));
         }
         // Оцелот
         if (event.getEntityType() == EntityType.OCELOT) {
@@ -299,6 +323,12 @@ class MobDeathListener implements Listener {
                         config.getDouble("cat_head_drop_chance"),
                         config.getString("all_black_cat_head_texture"));
             }
+        }
+        // Железный голем
+        if (event.getEntityType() == EntityType.IRON_GOLEM) {
+            CreateAndDropHead(event, "железного голема",
+                    config.getDouble("iron_golem_head_drop_chance"),
+                    config.getString("iron_golem_head_texture"));
         }
         // Летучая Мышь
         if (event.getEntityType() == EntityType.BAT) {
@@ -453,6 +483,18 @@ class MobDeathListener implements Listener {
                         config.getString("dark_brown_black_dots_horse_head_texture"));
             }
         }
+        // Лошадь-скелет
+        if (event.getEntityType() == EntityType.SKELETON_HORSE) {
+            CreateAndDropHead(event, "лошади-скелет",
+                    config.getDouble("skeleton_horse_head_drop_chance"),
+                    config.getString("skeleton_horse_head_texture"));
+        }
+        // Лошадь-зомби
+        if (event.getEntityType() == EntityType.ZOMBIE_HORSE) {
+            CreateAndDropHead(event, "лошади-зомби",
+                    config.getDouble("zombie_horse_head_drop_chance"),
+                    config.getString("zombie_horse_head_texture"));
+        }
         // Осёл
         if (event.getEntityType() == EntityType.DONKEY) {
             CreateAndDropHead(event, "осла",
@@ -462,6 +504,12 @@ class MobDeathListener implements Listener {
         if (event.getEntityType() == EntityType.MULE) {
             CreateAndDropHead(event, "мула",
                     config.getDouble("mule_head_drop_chance"), config.getString("mule_head_texture"));
+        }
+        // Эндермен
+        if (event.getEntityType() == EntityType.ENDERMAN) {
+            CreateAndDropHead(event, "эндермена",
+                    config.getDouble("enderman_head_drop_chance"),
+                    config.getString("enderman_head_texture"));
         }
         // Кролик - 8
         if (event.getEntityType() == EntityType.RABBIT) {
@@ -503,6 +551,35 @@ class MobDeathListener implements Listener {
                         config.getString("killer_bunny_head_texture"));
             }
         }
+        // Пещерный паук
+        if (event.getEntityType() == EntityType.CAVE_SPIDER) {
+            CreateAndDropHead(event, "пещерного паука",
+                    config.getDouble("cave_spider_head_drop_chance"),
+                    config.getString("cave_spider_head_texture"));
+        }
+        // Лама - 4
+        if (event.getEntityType() == EntityType.LLAMA) {
+            Llama llama = (Llama) event.getEntity();
+            Llama.Color llama_color = llama.getColor();
+            // -=-=-=-=-
+            if (llama_color == Llama.Color.WHITE) {
+                CreateAndDropHead(event, "белой ламы",
+                        config.getDouble("llama_head_drop_chance"),
+                        config.getString("white_llama_head_texture"));
+            } else if (llama_color == Llama.Color.GRAY) {
+                CreateAndDropHead(event, "серой ламы",
+                        config.getDouble("llama_head_drop_chance"),
+                        config.getString("gray_llama_head_texture"));
+            } else if (llama_color == Llama.Color.CREAMY) {
+                CreateAndDropHead(event, "кремовой ламы",
+                        config.getDouble("llama_head_drop_chance"),
+                        config.getString("creamy_llama_head_texture"));
+            } else if (llama_color == Llama.Color.BROWN) {
+                CreateAndDropHead(event, "коричневой ламы",
+                        config.getDouble("llama_head_drop_chance"),
+                        config.getString("brown_llama_head_texture"));
+            }
+        }
         // Попугай - 5
         if (event.getEntityType() == EntityType.PARROT) {
             Parrot parrot = (Parrot) event.getEntity();
@@ -540,6 +617,23 @@ class MobDeathListener implements Listener {
             CreateAndDropHead(event, "лосося",
                     config.getDouble("salmon_head_drop_chance"), config.getString("salmon_head_texture"));
         }
+        // Тропическая рыба
+        if (event.getEntityType() == EntityType.TROPICAL_FISH) {
+            CreateAndDropHead(event, "тропической рыбы",
+                    config.getDouble("tropical_fish_head_drop_chance"),
+                    config.getString("tropical_fish_head_texture"));
+        }
+        // Черепаха
+        if (event.getEntityType() == EntityType.TURTLE) {
+            CreateAndDropHead(event, "черепахи",
+                    config.getDouble("turtle_head_drop_chance"),
+                    config.getString("turtle_head_texture"));
+        }
+        // Дельфин
+        if (event.getEntityType() == EntityType.DOLPHIN) {
+            CreateAndDropHead(event, "дельфина",
+                    config.getDouble("dolphin_head_drop_chance"), config.getString("dolphin_head_texture"));
+        }
         // Лиса - 2
         if (event.getEntityType() == EntityType.FOX) {
             Fox fox = (Fox) event.getEntity();
@@ -554,6 +648,119 @@ class MobDeathListener implements Listener {
                         config.getDouble("fox_head_drop_chance"),
                         config.getString("snow_fox_head_texture"));
             }
+        }
+        // Странствующий торговец
+        if (event.getEntityType() == EntityType.WANDERING_TRADER) {
+            CreateAndDropHead(event, "странствующего торговца",
+                    config.getDouble("wandering_trader_head_drop_chance"),
+                    config.getString("wandering_trader_head_texture"));
+        }
+        // Лама странствующего торговца - 4
+        if (event.getEntityType() == EntityType.TRADER_LLAMA) {
+            TraderLlama traderllama = (TraderLlama) event.getEntity();
+            TraderLlama.Color traderllama_color = traderllama.getColor();
+            // -=-=-=-=-
+            if (traderllama_color == Llama.Color.WHITE) {
+                CreateAndDropHead(event, "белой ламы странствующего торговца",
+                        config.getDouble("trader_llama_head_drop_chance"),
+                        config.getString("white_trader_llama_head_texture"));
+            } else if (traderllama_color == Llama.Color.GRAY) {
+                CreateAndDropHead(event, "серой ламы странствующего торговца",
+                        config.getDouble("trader_llama_head_drop_chance"),
+                        config.getString("gray_trader_llama_head_texture"));
+            } else if (traderllama_color == Llama.Color.CREAMY) {
+                CreateAndDropHead(event, "кремовой ламы странствующего торговца",
+                        config.getDouble("trader_llama_head_drop_chance"),
+                        config.getString("creamy_trader_llama_head_texture"));
+            } else if (traderllama_color == Llama.Color.BROWN) {
+                CreateAndDropHead(event, "коричневой ламы странствующего торговца",
+                        config.getDouble("trader_llama_head_drop_chance"),
+                        config.getString("brown_trader_llama_head_texture"));
+            }
+        }
+        // Пчела - 2
+        if (event.getEntityType() == EntityType.BEE) {
+            Bee bee = (Bee) event.getEntity();
+            // -=-=-=-=-
+            if (bee.hasNectar()) {
+                CreateAndDropHead(event, "пчелы с пыльцой",
+                        config.getDouble("pollinated_bee_head_drop_chance"),
+                        config.getString("pollinated_bee_head_texture"));
+            } else {
+                CreateAndDropHead(event, "пчелы",
+                        config.getDouble("bee_head_drop_chance"),
+                        config.getString("bee_head_texture"));
+            }
+        }
+        // Лавомерка
+        if (event.getEntityType() == EntityType.STRIDER) {
+            CreateAndDropHead(event, "лавомерки",
+                    config.getDouble("strider_head_drop_chance"),
+                    config.getString("strider_head_texture"));
+        }
+        // Светящийся спрут
+        if (event.getEntityType() == EntityType.GLOW_SQUID) {
+            CreateAndDropHead(event, "светящегося спрута",
+                    config.getDouble("glow_squid_head_drop_chance"),
+                    config.getString("glow_squid_head_texture"));
+        }
+        // Аксолотль - 5
+        if (event.getEntityType() == EntityType.AXOLOTL) {
+            Axolotl axolotl = (Axolotl) event.getEntity();
+            Axolotl.Variant axolotl_variant = axolotl.getVariant();
+            // -=-=-=-=-
+            if (axolotl_variant == Axolotl.Variant.LUCY) {
+                CreateAndDropHead(event, "аксолотля лейкиста",
+                        config.getDouble("axolotl_head_drop_chance"),
+                        config.getString("lucy_axolotl_head_texture"));
+            } else if (axolotl_variant == Axolotl.Variant.WILD) {
+                CreateAndDropHead(event, "дикого аксолотля",
+                        config.getDouble("axolotl_head_drop_chance"),
+                        config.getString("wild_axolotl_head_texture"));
+            } else if (axolotl_variant == Axolotl.Variant.GOLD) {
+                CreateAndDropHead(event, "золотого аксолотля",
+                        config.getDouble("axolotl_head_drop_chance"),
+                        config.getString("gold_axolotl_head_texture"));
+            } else if (axolotl_variant == Axolotl.Variant.CYAN) {
+                CreateAndDropHead(event, "голубого аксолотля",
+                        config.getDouble("axolotl_head_drop_chance"),
+                        config.getString("cyan_axolotl_head_texture"));
+            } else if (axolotl_variant == Axolotl.Variant.BLUE) {
+                CreateAndDropHead(event, "синего аксолотля",
+                        config.getDouble("blue_axolotl_head_drop_chance"),
+                        config.getString("blue_axolotl_head_texture"));
+            }
+        }
+        // Головастик
+        if (event.getEntityType() == EntityType.TADPOLE) {
+            CreateAndDropHead(event, "головастика",
+                    config.getDouble("tadpole_head_drop_chance"),
+                    config.getString("tadpole_head_texture"));
+        }
+        // Лягушка - 3
+        if (event.getEntityType() == EntityType.FROG) {
+            Frog frog = (Frog) event.getEntity();
+            Frog.Variant frog_variant = frog.getVariant();
+            // -=-=-=-=-
+            if (frog_variant == Frog.Variant.COLD) {
+                CreateAndDropHead(event, "снежной лягушки",
+                        config.getDouble("frog_head_drop_chance"),
+                        config.getString("cold_frog_head_texture"));
+            } else if (frog_variant == Frog.Variant.TEMPERATE) {
+                CreateAndDropHead(event, "лягушки из умеренного климата",
+                        config.getDouble("frog_head_drop_chance"),
+                        config.getString("temperate_frog_head_texture"));
+            } else if (frog_variant == Frog.Variant.WARM) {
+                CreateAndDropHead(event, "тропической лягушки",
+                        config.getDouble("frog_head_drop_chance"),
+                        config.getString("warm_frog_head_texture"));
+            }
+        }
+        // Тихоня
+        if (event.getEntityType() == EntityType.ALLAY) {
+            CreateAndDropHead(event, "тихони",
+                    config.getDouble("allay_head_drop_chance"),
+                    config.getString("allay_frog_head_texture"));
         }
 
         // Жители  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
