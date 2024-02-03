@@ -3,7 +3,7 @@ package me.matejpacan.dropheads;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import org.bukkit.Bukkit;
+import org.bukkit.DyeColor;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.Material;
@@ -125,21 +125,101 @@ class MobDeathListener implements Listener {
             }
         }
 
-        // Дружелюбные мобы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        // Боссы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        // Мобы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
         // Свинья
         if (event.getEntityType() == EntityType.PIG) {
             CreateAndDropHead(event, "свиньи",
                     config.getDouble("pig_head_drop_chance"), config.getString("pig_head_texture"));
         }
+        // Овца - 17
+        if (event.getEntityType() == EntityType.SHEEP) {
+            Sheep sheep = (Sheep) event.getEntity();
+            String custom_name = sheep.getName();
+            DyeColor sheep_dye_color = sheep.getColor();
+            // -=-=-=-=-
+            if (custom_name.equals("jeb_")) {
+                CreateAndDropHead(event, "разноцветной овцы",
+                        config.getDouble("jeb_sheep_head_drop_chance"),
+                        config.getString("jeb_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.WHITE) {
+                CreateAndDropHead(event, "белой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("white_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.ORANGE) {
+                CreateAndDropHead(event, "оранжевой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("orange_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.MAGENTA) {
+                CreateAndDropHead(event, "пурпурной овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("magenta_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.LIGHT_BLUE) {
+                CreateAndDropHead(event, "голубой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("light_blue_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.YELLOW) {
+                CreateAndDropHead(event, "жёлтой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("yellow_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.LIME) {
+                CreateAndDropHead(event, "лаймовой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("lime_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.PINK) {
+                CreateAndDropHead(event, "розовой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("pink_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.GRAY) {
+                CreateAndDropHead(event, "серой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("gray_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.LIGHT_GRAY) {
+                CreateAndDropHead(event, "светло-серой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("light_gray_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.CYAN) {
+                CreateAndDropHead(event, "голубой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("cyan_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.PURPLE) {
+                CreateAndDropHead(event, "фиолетовой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("purple_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.BLUE) {
+                CreateAndDropHead(event, "синей овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("blue_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.BROWN) {
+                CreateAndDropHead(event, "коричневой овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("brown_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.GREEN) {
+                CreateAndDropHead(event, "зелёной овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("green_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.RED) {
+                CreateAndDropHead(event, "красной овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("red_sheep_head_texture"));
+            } else if (sheep_dye_color == DyeColor.BLACK) {
+                CreateAndDropHead(event, "чёрной овцы",
+                        config.getDouble("sheep_head_drop_chance"),
+                        config.getString("black_sheep_head_texture"));
+            }
+        }
         // Грибная корова - 2
         if (event.getEntityType() == EntityType.MUSHROOM_COW) {
             MushroomCow mushroom_cow = (MushroomCow) event.getEntity();
-            if (mushroom_cow.getVariant() == MushroomCow.Variant.RED) {
+            MushroomCow.Variant mushroom_cow_variant = mushroom_cow.getVariant();
+            // -=-=-=-=-
+            if (mushroom_cow_variant == MushroomCow.Variant.RED) {
                 CreateAndDropHead(event, "красной грибной коровы",
                         config.getDouble("mooshroom_head_drop_chance"),
                         config.getString("red_mooshroom_head_drop_chance"));
-            } else if (mushroom_cow.getVariant() == MushroomCow.Variant.BROWN) {
+            } else if (mushroom_cow_variant == MushroomCow.Variant.BROWN) {
                 CreateAndDropHead(event, "коричневой грибной коровы",
                         config.getDouble("mooshroom_head_drop_chance"),
                         config.getString("brown_mooshroom_head_drop_chance"));
@@ -169,8 +249,7 @@ class MobDeathListener implements Listener {
                 return;
             }
             // Сообщение
-            Bukkit.getServer().broadcastMessage(
-                    "§5* " + killer.getName() + " §5зверски убивает кошку, и понижает свою репутацию");
+            killer.sendMessage("§5* " + killer.getName() + " §5зверски убивает кошку, и понижает свою репутацию");
             // Получение типа кошки
             Cat cat = (Cat) event.getEntity();
             Cat.Type cat_type = cat.getCatType();
@@ -231,6 +310,7 @@ class MobDeathListener implements Listener {
             Horse horse = (Horse) event.getEntity();
             Horse.Color horse_color = horse.getColor();
             Horse.Style horse_style = horse.getStyle();
+            // -=-=-=-=-
             if (horse_color == Horse.Color.WHITE && horse_style == Horse.Style.NONE) {
                 CreateAndDropHead(event, "белой лошади",
                         config.getDouble("horse_head_drop_chance"),
@@ -387,35 +467,37 @@ class MobDeathListener implements Listener {
         if (event.getEntityType() == EntityType.RABBIT) {
             Rabbit rabbit = (Rabbit) event.getEntity();
             String custom_name = rabbit.getName();
+            Rabbit.Type rabbit_type = rabbit.getRabbitType();
+            // -=-=-=-=-
             if (custom_name.equals("Toast")) {
                 CreateAndDropHead(event, "toast кролика",
-                        config.getDouble("rabbit_head_drop_chance"),
+                        config.getDouble("toast_rabbit_head_drop_chance"),
                         config.getString("toast_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.BROWN) {
+            } else if (rabbit_type == Rabbit.Type.BROWN) {
                 CreateAndDropHead(event, "коричневого кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("brown_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.WHITE) {
+            } else if (rabbit_type == Rabbit.Type.WHITE) {
                 CreateAndDropHead(event, "белого кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("white_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.BLACK) {
+            } else if (rabbit_type == Rabbit.Type.BLACK) {
                 CreateAndDropHead(event, "чёрного кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("black_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.BLACK_AND_WHITE) {
+            } else if (rabbit_type == Rabbit.Type.BLACK_AND_WHITE) {
                 CreateAndDropHead(event, "чёрно-белого кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("black_and_white_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.GOLD) {
+            } else if (rabbit_type == Rabbit.Type.GOLD) {
                 CreateAndDropHead(event, "золотистого кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("gold_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.SALT_AND_PEPPER) {
+            } else if (rabbit_type == Rabbit.Type.SALT_AND_PEPPER) {
                 CreateAndDropHead(event, "бело-коричневого кролика",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("salt_and_pepper_rabbit_head_texture"));
-            } else if (rabbit.getRabbitType() == Rabbit.Type.THE_KILLER_BUNNY) {
+            } else if (rabbit_type == Rabbit.Type.THE_KILLER_BUNNY) {
                 CreateAndDropHead(event, "кролика-убийцы",
                         config.getDouble("rabbit_head_drop_chance"),
                         config.getString("killer_bunny_head_texture"));
@@ -424,23 +506,25 @@ class MobDeathListener implements Listener {
         // Попугай - 5
         if (event.getEntityType() == EntityType.PARROT) {
             Parrot parrot = (Parrot) event.getEntity();
-            if (parrot.getVariant() == Parrot.Variant.RED) {
+            Parrot.Variant parrot_variant = parrot.getVariant();
+            // -=-=-=-=-
+            if (parrot_variant == Parrot.Variant.RED) {
                 CreateAndDropHead(event, "красного попугая",
                         config.getDouble("parrot_head_drop_chance"),
                         config.getString("red_parrot_head_texture"));
-            } else if (parrot.getVariant() == Parrot.Variant.BLUE) {
+            } else if (parrot_variant == Parrot.Variant.BLUE) {
                 CreateAndDropHead(event, "тёмно-синего попугая",
                         config.getDouble("parrot_head_drop_chance"),
                         config.getString("blue_parrot_head_texture"));
-            } else if (parrot.getVariant() == Parrot.Variant.GRAY) {
+            } else if (parrot_variant == Parrot.Variant.GRAY) {
                 CreateAndDropHead(event, "серого попугая",
                         config.getDouble("parrot_head_drop_chance"),
                         config.getString("gray_parrot_head_texture"));
-            } else if (parrot.getVariant() == Parrot.Variant.CYAN) {
+            } else if (parrot_variant == Parrot.Variant.CYAN) {
                 CreateAndDropHead(event, "голубого попугая",
                         config.getDouble("parrot_head_drop_chance"),
                         config.getString("cyan_parrot_head_texture"));
-            } else if (parrot.getVariant() == Parrot.Variant.GREEN) {
+            } else if (parrot_variant == Parrot.Variant.GREEN) {
                 CreateAndDropHead(event, "салатового попугая",
                         config.getDouble("parrot_head_drop_chance"),
                         config.getString("green_parrot_head_texture"));
@@ -459,22 +543,18 @@ class MobDeathListener implements Listener {
         // Лиса - 2
         if (event.getEntityType() == EntityType.FOX) {
             Fox fox = (Fox) event.getEntity();
-            if (fox.getFoxType() == Fox.Type.RED) {
+            Fox.Type fox_type = fox.getFoxType();
+            // -=-=-=-=-
+            if (fox_type == Fox.Type.RED) {
                 CreateAndDropHead(event, "лисицы",
                         config.getDouble("fox_head_drop_chance"),
                         config.getString("red_fox_head_texture"));
-            } else if (fox.getFoxType() == Fox.Type.SNOW) {
+            } else if (fox_type == Fox.Type.SNOW) {
                 CreateAndDropHead(event, "песца",
                         config.getDouble("fox_head_drop_chance"),
                         config.getString("snow_fox_head_texture"));
             }
         }
-
-        // Нейтральные мобы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-        // Враждебные мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-        // Боссы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
         // Жители  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
