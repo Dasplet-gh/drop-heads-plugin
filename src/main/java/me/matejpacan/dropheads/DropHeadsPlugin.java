@@ -330,6 +330,82 @@ class MobDeathListener implements Listener {
                     config.getDouble("iron_golem_head_drop_chance"),
                     config.getString("iron_golem_head_texture"));
         }
+        // Волк - 17
+        if (event.getEntityType() == EntityType.WOLF) {
+            Wolf wolf = (Wolf) event.getEntity();
+            // -=-=-=-=-
+            if (wolf.isTamed()) {
+                if (wolf.getCollarColor() == DyeColor.WHITE) {
+                    CreateAndDropHead(event, "прирученного волка c белым ошейником",
+                            config.getDouble("white_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_white_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.ORANGE) {
+                    CreateAndDropHead(event, "прирученного волка c оранжевым ошейником",
+                            config.getDouble("orange_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_orange_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.MAGENTA) {
+                    CreateAndDropHead(event, "прирученного волка c пурпурным ошейником",
+                            config.getDouble("magenta_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_magenta_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.LIGHT_BLUE) {
+                    CreateAndDropHead(event, "прирученного волка c голубым ошейником",
+                            config.getDouble("light_blue_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_light_blue_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.YELLOW) {
+                    CreateAndDropHead(event, "прирученного волка c жёлтым ошейником",
+                            config.getDouble("yellow_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_yellow_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.LIME) {
+                    CreateAndDropHead(event, "прирученного волка c лаймовым ошейником",
+                            config.getDouble("lime_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_lime_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.PINK) {
+                    CreateAndDropHead(event, "прирученного волка c розовым ошейником",
+                            config.getDouble("pink_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_pink_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.GRAY) {
+                    CreateAndDropHead(event, "прирученного волка c серым ошейником",
+                            config.getDouble("gray_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_gray_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.LIGHT_GRAY) {
+                    CreateAndDropHead(event, "прирученного волка c светло-серым ошейником",
+                            config.getDouble("light_gray_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_light_gray_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.CYAN) {
+                    CreateAndDropHead(event, "прирученного волка c голубым ошейником",
+                            config.getDouble("cyan_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_cyan_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.PURPLE) {
+                    CreateAndDropHead(event, "прирученного волка c фиолетовым ошейником",
+                            config.getDouble("purple_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_purple_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.BLUE) {
+                    CreateAndDropHead(event, "прирученного волка c синим ошейником",
+                            config.getDouble("blue_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_blue_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.BROWN) {
+                    CreateAndDropHead(event, "прирученного волка c коричневым ошейником",
+                            config.getDouble("brown_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_brown_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.GREEN) {
+                    CreateAndDropHead(event, "прирученного волка c зелёным ошейником",
+                            config.getDouble("green_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_green_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.RED) {
+                    CreateAndDropHead(event, "прирученного волка c красным ошейником",
+                            config.getDouble("red_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_red_wolf_head_texture"));
+                } else if (wolf.getCollarColor() == DyeColor.BLACK) {
+                    CreateAndDropHead(event, "прирученного волка c чёрным ошейником",
+                            config.getDouble("black_tamed_wolf_head_drop_chance"),
+                            config.getString("tamed_black_wolf_head_texture"));
+                }
+            } else {
+                CreateAndDropHead(event, "волка",
+                        config.getDouble("wolf_head_drop_chance"),
+                        config.getString("wolf_head_texture"));
+            }
+        }
         // Летучая Мышь
         if (event.getEntityType() == EntityType.BAT) {
             CreateAndDropHead(event, "летучей мыши",
@@ -557,6 +633,12 @@ class MobDeathListener implements Listener {
                     config.getDouble("cave_spider_head_drop_chance"),
                     config.getString("cave_spider_head_texture"));
         }
+        // Белый медведь
+        if (event.getEntityType() == EntityType.POLAR_BEAR) {
+            CreateAndDropHead(event, "белого медведя",
+                    config.getDouble("polar_bear_head_drop_chance"),
+                    config.getString("polar_bear_head_texture"));
+        }
         // Лама - 4
         if (event.getEntityType() == EntityType.LLAMA) {
             Llama llama = (Llama) event.getEntity();
@@ -623,6 +705,12 @@ class MobDeathListener implements Listener {
                     config.getDouble("tropical_fish_head_drop_chance"),
                     config.getString("tropical_fish_head_texture"));
         }
+        // Иглобрюх
+        if (event.getEntityType() == EntityType.STRIDER) {
+            CreateAndDropHead(event, "иглобрюха",
+                    config.getDouble("pufferfish_head_drop_chance"),
+                    config.getString("pufferfish_head_texture"));
+        }
         // Черепаха
         if (event.getEntityType() == EntityType.TURTLE) {
             CreateAndDropHead(event, "черепахи",
@@ -676,6 +764,41 @@ class MobDeathListener implements Listener {
                 CreateAndDropHead(event, "коричневой ламы странствующего торговца",
                         config.getDouble("trader_llama_head_drop_chance"),
                         config.getString("brown_trader_llama_head_texture"));
+            }
+        }
+        // Панда - 7
+        if (event.getEntityType() == EntityType.PANDA) {
+            Panda panda = (Panda) event.getEntity();
+            Panda.Gene panda_gene = panda.getMainGene();
+            // -=-=-=-=-
+            if (panda_gene == Panda.Gene.NORMAL) {
+                CreateAndDropHead(event, "панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("normal_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.LAZY) {
+                CreateAndDropHead(event, "ленивой панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("lazy_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.WORRIED) {
+                CreateAndDropHead(event, "беспокойной панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("worried_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.PLAYFUL) {
+                CreateAndDropHead(event, "игривой панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("playful_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.AGGRESSIVE) {
+                CreateAndDropHead(event, "агрессивной панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("aggressive_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.WEAK) {
+                CreateAndDropHead(event, "больной панды",
+                        config.getDouble("panda_head_drop_chance"),
+                        config.getString("weak_panda_head_texture"));
+            } else if (panda_gene == Panda.Gene.BROWN) {
+                CreateAndDropHead(event, "коричневой панды",
+                        config.getDouble("brown_panda_head_drop_chance"),
+                        config.getString("brown_panda_head_texture"));
             }
         }
         // Пчела - 2
