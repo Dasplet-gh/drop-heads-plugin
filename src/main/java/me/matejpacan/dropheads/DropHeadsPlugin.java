@@ -5,6 +5,9 @@ import com.mojang.authlib.properties.Property;
 
 import org.bukkit.DyeColor;
 import org.bukkit.Sound;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -15,17 +18,20 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
-public final class DropHeadsPlugin extends JavaPlugin {
+public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         MobDeathListener.config = getConfig();
         getServer().getPluginManager().registerEvents(new MobDeathListener(), this);
+        Objects.requireNonNull(getCommand("gethead")).setExecutor(this);
         getLogger().info("Плагин успешно запущен!");
     }
 
@@ -33,15 +39,53 @@ public final class DropHeadsPlugin extends JavaPlugin {
     public void onDisable() {
         getLogger().info("Плагин успешно отключен!");
     }
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
+                             String[] args) {
+        // Проверка, является ли отправитель игроком
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("§cТолько игрок может использовать команду!");
+            return true;
+        }
+        // Проверка, является ли отправитель оператором сервера
+        if (!sender.isOp()) {
+            sender.sendMessage("§cУ вас нет прав на использование этой команды!");
+            return true;
+        }
+
+        // Проверка имени команды
+        if (command.getName().equalsIgnoreCase("gethead")) {
+            // Проверяем, был ли передан хотя бы один аргумент
+            if (args.length == 0) {
+                sender.sendMessage("§6Используйте: /gethead <head_tag>");
+                return true;
+            }
+            // Выдача головы
+            Player player = (Player) sender;
+            player.sendMessage("Hello!" + args[0]);
+
+            return true;
+        }
+
+        return false;
+    }
 }
 
 class MobDeathListener implements Listener {
 
     static FileConfiguration config;
 
-    public static ItemStack CreateHead(String texture_name) {
+    public static ItemStack CreateCustomHeadOrGetVanillaHead(String texture_name) {
         // Текстура головы
         String texture = config.getString(texture_name + "_head_texture");
+        assert texture != null;
+        // Если голова ванильная, то получаем её и всё
+        if (texture.startsWith("minecraft:")) {
+            Material material = Material.getMaterial(texture);
+            assert material != null;
+            return new ItemStack(material);
+        }
         // Имя головы
         String name = config.getString(texture_name + "_head_name");
         // Объект голова и мета данные головы
@@ -67,8 +111,9 @@ class MobDeathListener implements Listener {
     public static void DropHead(EntityDeathEvent event, String drop_chance_name, String texture_name) {
         // Получение убийцы
         Player killer = event.getEntity().getKiller();
-        // Если нет убийцы, то голова не выпадает
-        if (killer == null) {
+        Ageable ageable = (Ageable) event.getEntity();
+        // Если нет убийцы или моб ребёнок, то голова не выпадает
+        if (killer == null || !ageable.isAdult()) {
            return;
         }
         // Получение уровня добычи у оружия убийцы
@@ -80,7 +125,7 @@ class MobDeathListener implements Listener {
         // Если выпал шанс, то голова дропается
         if (new Random().nextDouble() <= drop_chance) {
             // Добавление головы в дроп
-            event.getDrops().add(CreateHead(texture_name));
+            event.getDrops().add(CreateCustomHeadOrGetVanillaHead(texture_name));
             // Имя головы
             String name = config.getString(texture_name + "_head_name");
             // Воспроизведение торжества в связи с выпадением головы
@@ -119,7 +164,15 @@ class MobDeathListener implements Listener {
 
             // Боссы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-            // Обычнве Мобы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+            case ENDER_DRAGON: // Дракон
+                DropHead(event, "ender_dragon", "ender_dragon");
+                break;
+
+            case WITHER: // Визер
+                DropHead(event, "wither", "wither");
+                break;
+
+            // Обычные Мобы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
             case PIG: // Свинья
                 DropHead(event, "pig", "pig");
@@ -192,6 +245,24 @@ class MobDeathListener implements Listener {
                 DropHead(event, "spider", "spider");
                 break;
 
+            case SKELETON: // Скелет
+                DropHead(event, "skeleton", "skeleton");
+                break;
+
+            case ZOMBIE: // Зомби
+                DropHead(event, "zombie", "zombie");
+                break;
+
+            case CREEPER: // Крипер - 2
+                Creeper creeper = (Creeper) event.getEntity();
+
+                if (creeper.isPowered()) {
+                    DropHead(event, "powered_creeper", "powered_creeper");
+                } else {
+                    DropHead(event, "creeper", "creeper");
+                }
+                break;
+
             case COW: // Корова
                 DropHead(event, "cow", "cow");
                 break;
@@ -202,6 +273,14 @@ class MobDeathListener implements Listener {
 
             case GHAST: // Гаст
                 DropHead(event, "ghast", "ghast");
+                break;
+
+            case SLIME: // Слизень
+                Slime slime = (Slime) event.getEntity();
+
+                if (slime.getSize() == 1) {
+                    DropHead(event, "slime", "slime");
+                }
                 break;
 
             case SQUID: // Спрут
@@ -301,6 +380,14 @@ class MobDeathListener implements Listener {
                 DropHead(event, "blaze", "blaze");
                 break;
 
+            case MAGMA_CUBE: // Магма Куб
+                MagmaCube magma_cube = (MagmaCube) event.getEntity();
+
+                if (magma_cube.getSize() == 1) {
+                    DropHead(event, "magma_cube", "magma_cube");
+                }
+                break;
+
             case OCELOT: // Оцелот
                 DropHead(event, "ocelot", "ocelot");
                 break;
@@ -362,6 +449,10 @@ class MobDeathListener implements Listener {
 
             case BAT: // Летучая Мышь
                 DropHead(event, "bat", "bat");
+                break;
+
+            case WITCH: // Ведьма
+                DropHead(event, "witch", "witch");
                 break;
 
             case HORSE: // Лошадь - 35
@@ -583,8 +674,24 @@ class MobDeathListener implements Listener {
                 DropHead(event, "elder_guardian", "elder_guardian");
                 break;
 
+            case SILVERFISH: // Чешуйница
+                DropHead(event, "silverfish", "silverfish");
+                break;
+
+            case SHULKER: // Шалкер
+                DropHead(event, "shulker", "shulker");
+                break;
+
             case POLAR_BEAR: // Белый медведь
                 DropHead(event, "polar_bear", "polar_bear");
+                break;
+
+            case HUSK: // Кадавр
+                DropHead(event, "husk", "husk");
+                break;
+
+            case STRAY: // Зимогор
+                DropHead(event, "stray", "stray");
                 break;
 
             case LLAMA: // Лама - 4
@@ -607,6 +714,18 @@ class MobDeathListener implements Listener {
                     default:
                         break;
                 }
+                break;
+
+            case EVOKER: // Заклинатель
+                DropHead(event, "evoker", "evoker");
+                break;
+
+            case VEX: // Вредина
+                DropHead(event, "vex", "vex");
+                break;
+
+            case VINDICATOR: // Поборник
+                DropHead(event, "vindicator", "vindicator");
                 break;
 
             case PARROT:
@@ -656,6 +775,14 @@ class MobDeathListener implements Listener {
 
             case DOLPHIN: // Дельфин
                 DropHead(event, "dolphin", "dolphin");
+                break;
+
+            case DROWNED: // Утопленник
+                DropHead(event, "drowned", "drowned");
+                break;
+
+            case PHANTOM: // Фантом
+                DropHead(event, "phantom", "phantom");
                 break;
 
             case FOX: // Лиса - 2
@@ -738,6 +865,14 @@ class MobDeathListener implements Listener {
                 }
                 break;
 
+            case PILLAGER: // Разбойник
+                DropHead(event, "pillager", "pillager");
+                break;
+
+            case RAVAGER: // Разоритель
+                DropHead(event, "ravager", "ravager");
+                break;
+
             case BEE: // Пчела - 2
                 Bee bee = (Bee) event.getEntity();
 
@@ -762,6 +897,14 @@ class MobDeathListener implements Listener {
 
             case ZOGLIN: // Зоглин
                 DropHead(event, "zoglin", "zoglin");
+                break;
+
+            case PIGLIN: // Пиглин
+                DropHead(event, "piglin", "piglin");
+                break;
+
+            case PIGLIN_BRUTE: // Брутальный пиглин
+                DropHead(event, "piglin_brute", "piglin");
                 break;
 
             case GLOW_SQUID: // Светящийся спрут
@@ -846,6 +989,18 @@ class MobDeathListener implements Listener {
 
             case ALLAY: // Тихоня
                 DropHead(event, "allay", "allay");
+                break;
+
+            case WARDEN: // Хранитель
+                DropHead(event, "warden", "warden");
+                break;
+
+            case CAMEL: // Верблюд
+                DropHead(event, "camel", "camel");
+                break;
+
+            case SNIFFER: // Нюхач
+                DropHead(event, "sniffer", "sniffer");
                 break;
 
             // Жители  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
