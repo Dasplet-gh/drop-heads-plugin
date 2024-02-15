@@ -6,7 +6,7 @@
 
   <groupId>me.matejpacan</groupId>
   <artifactId>DropHeads</artifactId>
-  <version>1.0</version>
+  <version>1.0.6</version>
   <packaging>jar</packaging>
 
   <name>DropHeads</name>

@@ -1,5 +1,5 @@
 name: DropHeads
-version: '1.0'
+version: '1.0.6'
 main: me.matejpacan.dropheads.DropHeadsPlugin
 api-version: '1.20'
 

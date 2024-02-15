@@ -18,6 +18,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
@@ -61,9 +62,14 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
                 sender.sendMessage("§6Используйте: /gethead <head_tag>");
                 return true;
             }
+            // Получение текстуры головы что бы проверить её наличие
+            if (MobDeathListener.config.getString(args[0] + "_head_texture") == null) {
+                sender.sendMessage("§6Вы указали не сущещствующий head_tag!\nИспользуйте: /gethead <head_tag>");
+                return true;
+            }
             // Выдача головы
             Player player = (Player) sender;
-            player.sendMessage("Hello!" + args[0]);
+            player.getInventory().addItem(MobDeathListener.CreateCustomHeadOrGetVanillaHead(args[0]));
 
             return true;
         }
@@ -77,13 +83,16 @@ class MobDeathListener implements Listener {
     static FileConfiguration config;
 
     public static ItemStack CreateCustomHeadOrGetVanillaHead(String texture_name) {
+
         // Текстура головы
         String texture = config.getString(texture_name + "_head_texture");
         assert texture != null;
+        // Начало ванильных голов
+        String vanilla_head_starts = "minecraft:";
         // Если голова ванильная, то получаем её и всё
-        if (texture.startsWith("minecraft:")) {
-            Material material = Material.getMaterial(texture);
-            assert material != null;
+        if (texture.startsWith(vanilla_head_starts)) {                                                                  // <<< ЗАТЕСТИТЬ-ЗАТЕСТИТЬ а также проверить дроп
+            Material material = Material.getMaterial(texture.substring(vanilla_head_starts.length()).toUpperCase());    // <<< ЗАТЕСТИТЬ-ЗАТЕСТИТЬ остальных голов и
+            assert material != null;                                                                                    // <<< ЗАТЕСТИТЬ-ЗАТЕСТИТЬ отключить команду в конце
             return new ItemStack(material);
         }
         // Имя головы
@@ -111,10 +120,16 @@ class MobDeathListener implements Listener {
     public static void DropHead(EntityDeathEvent event, String drop_chance_name, String texture_name) {
         // Получение убийцы
         Player killer = event.getEntity().getKiller();
-        Ageable ageable = (Ageable) event.getEntity();
-        // Если нет убийцы или моб ребёнок, то голова не выпадает
-        if (killer == null || !ageable.isAdult()) {
+        // Если нет убийцы, то голова не выпадает
+        if (killer == null) {
            return;
+        }
+        // Если убитый моб это ребёнок, то голова не выпадает
+        if (event.getEntity() instanceof Ageable) {
+            Ageable ageable = (Ageable) event.getEntity();
+            if (!ageable.isAdult()) {
+                return;
+            }
         }
         // Получение уровня добычи у оружия убийцы
         int loot_level = killer.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_MOBS);
@@ -180,6 +195,7 @@ class MobDeathListener implements Listener {
 
             case SHEEP: // Овца - 17
                 Sheep sheep = (Sheep) event.getEntity();
+                if (!sheep.isAdult()) { break; }
                 DyeColor sheep_dye_color = sheep.getColor();
 
                 if (sheep.getName().equals("jeb_")) {
