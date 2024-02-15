@@ -1,9 +1,0 @@
-name: DropHeads
-version: '1.0.6'
-main: me.matejpacan.dropheads.DropHeadsPlugin
-api-version: '1.20'
-
-commands:
-    gethead:
-        description: Получить голову моба
-        usage: /<command> []
