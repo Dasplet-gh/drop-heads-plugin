@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DropHeads.iml" filepath="$PROJECT_DIR$/DropHeads.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DropHeadsPlugin.iml" filepath="$PROJECT_DIR$/DropHeadsPlugin.iml" />
     </modules>
   </component>
 </project>

@@ -122,7 +122,7 @@ class MobDeathListener implements Listener {
         Player killer = event.getEntity().getKiller();
         // Если нет убийцы, то голова не выпадает
         if (killer == null) {
-           return;
+            return;
         }
         // Если убитый моб это ребёнок, то голова не выпадает
         if (event.getEntity() instanceof Ageable) {
