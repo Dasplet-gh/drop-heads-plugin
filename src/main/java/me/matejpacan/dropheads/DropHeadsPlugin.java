@@ -73,7 +73,7 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
             // Выдача головы
             Player player = (Player) sender;
             player.getInventory().addItem(MobDeathListener.CreateHeadItem(Objects.requireNonNull(
-                    DropHeadsPlugin.config.getString(args[0] + MobDeathListener.TagSuffixHeadTexture)),
+                            DropHeadsPlugin.config.getString(args[0] + MobDeathListener.TagSuffixHeadTexture)),
                     DropHeadsPlugin.config.getString(args[0] + MobDeathListener.TagSuffixHeadName)));
 
             return true;
@@ -155,10 +155,11 @@ class MobDeathListener implements Listener {
     public static void DropMobHead(EntityDeathEvent event, String drop_chance_tag, String texture_tag) {
         // Получение убийцы
         Player killer = event.getEntity().getKiller();
+        // Если убийцы нет, или шанс на выпадение не выпал, то голова не выпадает
         if (killer == null || !IsMobHeadDrop(event, drop_chance_tag)) { return; }
         // Добавление головы в дроп
         event.getDrops().add(CreateHeadItem(Objects.requireNonNull(
-                DropHeadsPlugin.config.getString(texture_tag + TagSuffixHeadTexture)),
+                        DropHeadsPlugin.config.getString(texture_tag + TagSuffixHeadTexture)),
                 DropHeadsPlugin.config.getString(texture_tag + TagSuffixHeadName)));
         // Воспроизведение торжества в связи с выпадением головы
         TriumphOfDropHead(killer, DropHeadsPlugin.config.getString(texture_tag + TagSuffixHeadName));
@@ -428,9 +429,7 @@ class MobDeathListener implements Listener {
 
             case CAT: // Кошка - 11
                 Player killer = event.getEntity().getKiller();
-                if (killer == null) {
-                    return;
-                }
+                if (killer == null) { break; }
 
                 killer.sendMessage(
                         "§5* " + killer.getName() + " §5зверски убивает кошку, и понижает свою репутацию");
@@ -494,147 +493,7 @@ class MobDeathListener implements Listener {
                 Horse.Color horse_color = horse.getColor();
                 Horse.Style horse_style = horse.getStyle();
 
-                switch (horse_color) {
-                    case WHITE:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "white_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "white_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "white_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "white_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "white_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case CREAMY:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "creamy_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "creamy_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "creamy_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "creamy_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "creamy_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case CHESTNUT:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "chestnut_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "chestnut_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "chestnut_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "chestnut_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "chestnut_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case BROWN:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "brown_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "brown_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "brown_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "brown_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "brown_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case BLACK:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "black_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "black_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "black_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "black_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "black_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case GRAY:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "gray_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "gray_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "gray_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "gray_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "gray_black_dots_horse");
-                                break;
-                        }
-                        break;
-
-                    case DARK_BROWN:
-                        switch (horse_style) {
-                            case NONE:
-                                DropMobHead(event, "horse", "dark_brown_none_horse");
-                                break;
-                            case WHITE:
-                                DropMobHead(event, "horse", "dark_brown_white_horse");
-                                break;
-                            case WHITEFIELD:
-                                DropMobHead(event, "horse", "dark_brown_whitefield_horse");
-                                break;
-                            case WHITE_DOTS:
-                                DropMobHead(event, "horse", "dark_brown_white_dots_horse");
-                                break;
-                            case BLACK_DOTS:
-                                DropMobHead(event, "horse", "dark_brown_black_dots_horse");
-                                break;
-                        }
-                        break;
-                }
+                DropMobHead(event, "horse", GenerateHorseTextureTag(horse_color, horse_style));
                 break;
 
             case SKELETON_HORSE: // Лошадь-скелет
@@ -1037,12 +896,179 @@ class MobDeathListener implements Listener {
                 DropMobHead(event, "sniffer", "sniffer");
                 break;
 
-            // Жители  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+            // Крестьянин  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-            // Зомби Жители  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+            case VILLAGER: // Крестьянин
+                Villager villager = (Villager) event.getEntity();
+                Villager.Type villager_type = villager.getVillagerType();
+                Villager.Profession villager_profession = villager.getProfession();
+
+                DropMobHead(event, "villager", GenerateVillagerTextureTag(
+                        villager_type, villager_profession, "villager"));
+                break;
+
+            // Крестьянин-зомби  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+            case ZOMBIE_VILLAGER: // Крестьянин-зомби
+                ZombieVillager zombie_villager = (ZombieVillager) event.getEntity();
+                Villager.Type zombie_villager_type = zombie_villager.getVillagerType();
+                Villager.Profession zombie_villager_profession = zombie_villager.getVillagerProfession();
+
+                DropMobHead(event, "zombie_villager", GenerateVillagerTextureTag(
+                        zombie_villager_type, zombie_villager_profession, "zombie_villager"));
+                break;
+
+            // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
             default:
                 break;
         }
+    }
+
+    public static String GenerateHorseTextureTag(Horse.Color horse_color, Horse.Style horse_style) {
+        String texture_tag = "";
+
+        switch (horse_color) {
+            case WHITE:
+                texture_tag += "white";
+                break;
+            case CREAMY:
+                texture_tag += "creamy";
+                break;
+            case CHESTNUT:
+                texture_tag += "chestnut";
+                break;
+            case BROWN:
+                texture_tag += "brown";
+                break;
+            case BLACK:
+                texture_tag += "black";
+                break;
+            case GRAY:
+                texture_tag += "gray";
+                break;
+            case DARK_BROWN:
+                texture_tag += "dark_brown";
+                break;
+            default:
+                break;
+        }
+
+        texture_tag += "_";
+
+        switch (horse_style) {
+            case NONE:
+                texture_tag += "none";
+                break;
+            case WHITE:
+                texture_tag += "white";
+                break;
+            case WHITEFIELD:
+                texture_tag += "whitefield";
+                break;
+            case WHITE_DOTS:
+                texture_tag += "white_dots";
+                break;
+            case BLACK_DOTS:
+                texture_tag += "black_dots";
+                break;
+            default:
+                break;
+        }
+
+        texture_tag += "_";
+
+        texture_tag += "hosre";
+
+        return texture_tag;
+    }
+
+    public static String GenerateVillagerTextureTag(
+            Villager.Type villager_type, Villager.Profession villager_profession, String villager_tag) {
+        String texture_tag = "";
+
+        switch (villager_type) {
+            case PLAINS:
+                texture_tag += "plains";
+                break;
+            case DESERT:
+                texture_tag += "desert";
+                break;
+            case JUNGLE:
+                texture_tag += "jungle";
+                break;
+            case SAVANNA:
+                texture_tag += "savanna";
+                break;
+            case SNOW:
+                texture_tag += "snow";
+                break;
+            case SWAMP:
+                texture_tag += "swamp";
+                break;
+            case TAIGA:
+                texture_tag += "taiga";
+                break;
+            default:
+                break;
+        }
+
+        texture_tag += "_";
+
+        switch (villager_profession) {
+            case NONE:
+                texture_tag += "none";
+                break;
+            case NITWIT:
+                texture_tag += "nitwit";
+                break;
+            case ARMORER:
+                texture_tag += "armorer";
+                break;
+            case BUTCHER:
+                texture_tag += "butcher";
+                break;
+            case CARTOGRAPHER:
+                texture_tag += "cartographer";
+                break;
+            case CLERIC:
+                texture_tag += "cleric";
+                break;
+            case FARMER:
+                texture_tag += "farmer";
+                break;
+            case FISHERMAN:
+                texture_tag += "fisherman";
+                break;
+            case FLETCHER:
+                texture_tag += "fletcher";
+                break;
+            case LEATHERWORKER:
+                texture_tag += "leatherworker";
+                break;
+            case LIBRARIAN:
+                texture_tag += "librarian";
+                break;
+            case MASON:
+                texture_tag += "mason";
+                break;
+            case SHEPHERD:
+                texture_tag += "shepherd";
+                break;
+            case TOOLSMITH:
+                texture_tag += "toolsmith";
+                break;
+            case WEAPONSMITH:
+                texture_tag += "weaponsmith";
+                break;
+            default:
+                break;
+        }
+
+        texture_tag += "_";
+
+        texture_tag += villager_tag;
+
+        return texture_tag;
     }
 }
