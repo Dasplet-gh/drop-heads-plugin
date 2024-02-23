@@ -219,6 +219,7 @@ class MobDeathListener implements Listener {
 
                 if (sheep.getName().equals("jeb_")) {
                     DropMobHead(event, "sheep", "jeb_sheep");
+                    break;
                 }
 
                 if (sheep_dye_color == null) { break; }
@@ -770,7 +771,7 @@ class MobDeathListener implements Listener {
                 Bee bee = (Bee) event.getEntity();
 
                 if (bee.hasNectar()) {
-                    DropMobHead(event, "pollinated", "pollinated");
+                    DropMobHead(event, "pollinated_bee", "pollinated_bee");
                 } else {
                     DropMobHead(event, "bee", "bee");
                 }
@@ -978,7 +979,7 @@ class MobDeathListener implements Listener {
 
         texture_tag += "_";
 
-        texture_tag += "hosre";
+        texture_tag += "horse";
 
         return texture_tag;
     }

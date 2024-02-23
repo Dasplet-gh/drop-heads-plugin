@@ -1,3 +1,17 @@
+# СООБЩЕНИЯ \==========================================================================================================\
+
+message_on_enable: "Плагин успешно запущен!"
+message_on_disable: "Плагин успешно отключен!"
+
+message_not_player: "§cТолько игрок может использовать команду!"
+message_not_permission: "§cУ вас нет прав на использование этой команды!"
+
+message_gethead_usage: "§6Используйте: /gethead <head_tag>"
+message_gethead_missing_head: "§6Вы указали не сущещствующий head_tag!\nИспользуйте: /gethead <head_tag>"
+
+message_drop_head_title_header: "§6Добыт Трофей"
+message_drop_head_text_prefix: "§l§8Голова"
+
 # ВЕРОЯТНОСТИ \========================================================================================================\
 
 looting_multiplier: 0.2
@@ -14,7 +28,7 @@ wither_head_drop_chance: 0.9999
 # Мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 # Classic
-pig_head_drop_chance: 0.9999
+pig_head_drop_chance: 0.0999
 sheep_head_drop_chance: 0.9999
 jeb_sheep_head_drop_chance: 0.9999
 spider_head_drop_chance: 0.9999
@@ -38,6 +52,7 @@ snow_golem_head_drop_chance: 0.9999
 snowman_head_drop_chance: 0.9999
 blaze_head_drop_chance: 0.9999
 magma_cube_head_drop_chance: 0.9999
+villager_head_drop_chance: 0.9999
 # v1.2.1
 ocelot_head_drop_chance: 0.9999
 cat_head_drop_chance: 0.9999
@@ -45,6 +60,7 @@ iron_golem_head_drop_chance: 0.9999
 # v1.4.2
 bat_head_drop_chance: 0.9999
 witch_head_drop_chance: 0.9999
+zombie_villager_head_drop_chance: 0.9999
 # v1.6.1
 horse_head_drop_chance: 0.9999
 skeleton_horse_head_drop_chance: 0.9999
@@ -161,6 +177,7 @@ cow_head_name: коровы
 chicken_head_name: курицы
 ghast_head_name: гаста
 slime_head_name: слизня
+zombie_pigman_head_name: зомби-свиночеловека
 squid_head_name: спрута
 # Волки - 17
 white_tamed_wolf_head_name: прирученного волка c белым ошейником
@@ -243,12 +260,12 @@ dark_brown_black_dots_horse_head_name: темно-гнедой лошади с �
 # -----------
 skeleton_horse_head_name: лошади-скелета
 zombie_horse_head_name: лошади-зомби
-donkey_head_name: ося
+donkey_head_name: осла
 mule_head_name: мула
 enderman_head_name: эндермена
 endermite_head_name: эндермита
 # Кролики - 8
-toast_rabbit_head_name: toast кролика
+toast_rabbit_head_name: кролика toast
 brown_rabbit_head_name: коричневого кролика
 white_rabbit_head_name: белого кролика
 black_rabbit_head_name: чёрного кролика
@@ -339,13 +356,225 @@ cold_frog_head_name: снежной лягушки
 temperate_frog_head_name: лягушки из умеренного климата
 warm_frog_head_name: тропической лягушки
 allay_head_name: тихони
-warden_frog_head_name: хранителя
+warden_head_name: хранителя
 camel_head_name: верблюда
 sniffer_head_name: нюхача
 
-# Жители -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Крестьянин -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-# Зомби Жители -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+plains_none_villager_head_name: крестьянина
+desert_none_villager_head_name: пустынного крестьянина
+jungle_none_villager_head_name: джунглевого крестьянина
+savanna_none_villager_head_name: саваннового крестьянина
+snow_none_villager_head_name: снежного крестьянина
+swamp_none_villager_head_name: болотного крестьянина
+taiga_none_villager_head_name: таёжного крестьянина
+plains_nitwit_villager_head_name: нищего крестьянина
+desert_nitwit_villager_head_name: пустынного нищего крестьянина
+jungle_nitwit_villager_head_name: джунглевого нищего крестьянина
+savanna_nitwit_villager_head_name: саваннового нищего крестьянина
+snow_nitwit_villager_head_name: снежного нищего крестьянина
+swamp_nitwit_villager_head_name: болотного нищего крестьянина
+taiga_nitwit_villager_head_name: таёжного нищего крестьянина
+plains_armorer_villager_head_name: крестьянина бронника
+desert_armorer_villager_head_name: пустынного крестьянина бронника
+jungle_armorer_villager_head_name: джунглевого крестьянина бронника
+savanna_armorer_villager_head_name: саваннового крестьянина бронника
+snow_armorer_villager_head_name: снежного крестьянина бронника
+swamp_armorer_villager_head_name: болотного крестьянина бронника
+taiga_armorer_villager_head_name: таёжного крестьянина бронника
+plains_butcher_villager_head_name: крестьянина мясника
+desert_butcher_villager_head_name: пустынного крестьянина мясника
+jungle_butcher_villager_head_name: джунглевого крестьянина мясника
+savanna_butcher_villager_head_name: саваннового крестьянина мясника
+snow_butcher_villager_head_name: снежного крестьянина мясника
+swamp_butcher_villager_head_name: болотного крестьянина мясника
+taiga_butcher_villager_head_name: таёжного крестьянина мясника
+plains_cartographer_villager_head_name: крестьянина картографа
+desert_cartographer_villager_head_name: пустынного крестьянина картографа
+jungle_cartographer_villager_head_name: джунглевого крестьянина картографа
+savanna_cartographer_villager_head_name: саваннового крестьянина картографа
+snow_cartographer_villager_head_name: снежного крестьянина картографа
+swamp_cartographer_villager_head_name: болотного крестьянина картографа
+taiga_cartographer_villager_head_name: таёжного крестьянина картографа
+plains_cleric_villager_head_name: крестьянина священника
+desert_cleric_villager_head_name: пустынного крестьянина священника
+jungle_cleric_villager_head_name: джунглевого крестьянина священника
+savanna_cleric_villager_head_name: саваннового крестьянина священника
+snow_cleric_villager_head_name: снежного крестьянина священника
+swamp_cleric_villager_head_name: болотного крестьянина священника
+taiga_cleric_villager_head_name: таёжного крестьянина священника
+plains_farmer_villager_head_name: крестьянина фермера
+desert_farmer_villager_head_name: пустынного крестьянина фермера
+jungle_farmer_villager_head_name: джунглевого крестьянина фермера
+savanna_farmer_villager_head_name: саваннового крестьянина фермера
+snow_farmer_villager_head_name: снежного крестьянина фермера
+swamp_farmer_villager_head_name: болотного крестьянина фермера
+taiga_farmer_villager_head_name: таёжного крестьянина фермера
+plains_fisherman_villager_head_name: крестьянина рыбака
+desert_fisherman_villager_head_name: пустынного крестьянина рыбака
+jungle_fisherman_villager_head_name: джунглевого крестьянина рыбака
+savanna_fisherman_villager_head_name: саваннового крестьянина рыбака
+snow_fisherman_villager_head_name: снежного крестьянина рыбака
+swamp_fisherman_villager_head_name: болотного крестьянина рыбака
+taiga_fisherman_villager_head_name: таёжного крестьянина рыбака
+plains_fletcher_villager_head_name: крестьянина лучника
+desert_fletcher_villager_head_name: пустынного крестьянина лучника
+jungle_fletcher_villager_head_name: джунглевого крестьянина лучника
+savanna_fletcher_villager_head_name: саваннового крестьянина лучника
+snow_fletcher_villager_head_name: снежного крестьянина лучника
+swamp_fletcher_villager_head_name: болотного крестьянина лучника
+taiga_fletcher_villager_head_name: таёжного крестьянина лучника
+plains_leatherworker_villager_head_name: крестьянина кожевника
+desert_leatherworker_villager_head_name: пустынного крестьянина кожевника
+jungle_leatherworker_villager_head_name: джунглевого крестьянина кожевника
+savanna_leatherworker_villager_head_name: саваннового крестьянина кожевника
+snow_leatherworker_villager_head_name: снежного крестьянина кожевника
+swamp_leatherworker_villager_head_name: болотного крестьянина кожевника
+taiga_leatherworker_villager_head_name: таёжного крестьянина кожевника
+plains_librarian_villager_head_name: крестьянина библиотекаря
+desert_librarian_villager_head_name: пустынного крестьянина библиотекаря
+jungle_librarian_villager_head_name: джунглевого крестьянина библиотекаря
+savanna_librarian_villager_head_name: саваннового крестьянина библиотекаря
+snow_librarian_villager_head_name: снежного крестьянина библиотекаря
+swamp_librarian_villager_head_name: болотного крестьянина библиотекаря
+taiga_librarian_villager_head_name: таёжного крестьянина библиотекаря
+plains_mason_villager_head_name: крестьянина каменщика
+desert_mason_villager_head_name: пустынного крестьянина каменщика
+jungle_mason_villager_head_name: джунглевого крестьянина каменщика
+savanna_mason_villager_head_name: саваннового крестьянина каменщика
+snow_mason_villager_head_name: снежного крестьянина каменщика
+swamp_mason_villager_head_name: болотного крестьянина каменщика
+taiga_mason_villager_head_name: таёжного крестьянина каменщика
+plains_shepherd_villager_head_name: крестьянина пастуха
+desert_shepherd_villager_head_name: пустынного крестьянина пастуха
+jungle_shepherd_villager_head_name: джунглевого крестьянина пастуха
+savanna_shepherd_villager_head_name: саваннового крестьянина пастуха
+snow_shepherd_villager_head_name: снежного крестьянина пастуха
+swamp_shepherd_villager_head_name: болотного крестьянина пастуха
+taiga_shepherd_villager_head_name: таёжного крестьянина пастуха
+plains_toolsmith_villager_head_name: крестьянина инструментальщика
+desert_toolsmith_villager_head_name: пустынного крестьянина инструментальщика
+jungle_toolsmith_villager_head_name: джунглевого крестьянина инструментальщика
+savanna_toolsmith_villager_head_name: саваннового крестьянина инструментальщика
+snow_toolsmith_villager_head_name: снежного крестьянина инструментальщика
+swamp_toolsmith_villager_head_name: болотного крестьянина инструментальщика
+taiga_toolsmith_villager_head_name: таёжного крестьянина инструментальщика
+plains_weaponsmith_villager_head_name: крестьянина оружейника
+desert_weaponsmith_villager_head_name: пустынного крестьянина оружейника
+jungle_weaponsmith_villager_head_name: джунглевого крестьянина оружейника
+savanna_weaponsmith_villager_head_name: саваннового крестьянина оружейника
+snow_weaponsmith_villager_head_name: снежного крестьянина оружейника
+swamp_weaponsmith_villager_head_name: болотного крестьянина оружейника
+taiga_weaponsmith_villager_head_name: таёжного крестьянина оружейника
+
+# Крестьянин-зомби -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+plains_none_zombie_villager_head_name: крестьянина-зомби
+desert_none_zombie_villager_head_name: пустынного крестьянина-зомби
+jungle_none_zombie_villager_head_name: джунглевого крестьянина-зомби
+savanna_none_zombie_villager_head_name: саваннового крестьянина-зомби
+snow_none_zombie_villager_head_name: снежного крестьянина-зомби
+swamp_none_zombie_villager_head_name: болотного крестьянина-зомби
+taiga_none_zombie_villager_head_name: таёжного крестьянина-зомби
+plains_nitwit_zombie_villager_head_name: нищего крестьянина-зомби
+desert_nitwit_zombie_villager_head_name: пустынного нищего крестьянина-зомби
+jungle_nitwit_zombie_villager_head_name: джунглевого нищего крестьянина-зомби
+savanna_nitwit_zombie_villager_head_name: саваннового нищего крестьянина-зомби
+snow_nitwit_zombie_villager_head_name: снежного нищего крестьянина-зомби
+swamp_nitwit_zombie_villager_head_name: болотного нищего крестьянина-зомби
+taiga_nitwit_zombie_villager_head_name: таёжного нищего крестьянина-зомби
+plains_armorer_zombie_villager_head_name: крестьянина-зомби бронника
+desert_armorer_zombie_villager_head_name: пустынного крестьянина-зомби бронника
+jungle_armorer_zombie_villager_head_name: джунглевого крестьянина-зомби бронника
+savanna_armorer_zombie_villager_head_name: саваннового крестьянина-зомби бронника
+snow_armorer_zombie_villager_head_name: снежного крестьянина-зомби бронника
+swamp_armorer_zombie_villager_head_name: болотного крестьянина-зомби бронника
+taiga_armorer_zombie_villager_head_name: таёжного крестьянина-зомби бронника
+plains_butcher_zombie_villager_head_name: крестьянина-зомби мясника
+desert_butcher_zombie_villager_head_name: пустынного крестьянина-зомби мясника
+jungle_butcher_zombie_villager_head_name: джунглевого крестьянина-зомби мясника
+savanna_butcher_zombie_villager_head_name: саваннового крестьянина-зомби мясника
+snow_butcher_zombie_villager_head_name: снежного крестьянина-зомби мясника
+swamp_butcher_zombie_villager_head_name: болотного крестьянина-зомби мясника
+taiga_butcher_zombie_villager_head_name: таёжного крестьянина-зомби мясника
+plains_cartographer_zombie_villager_head_name: крестьянина-зомби картографа
+desert_cartographer_zombie_villager_head_name: пустынного крестьянина-зомби картографа
+jungle_cartographer_zombie_villager_head_name: джунглевого крестьянина-зомби картографа
+savanna_cartographer_zombie_villager_head_name: саваннового крестьянина-зомби картографа
+snow_cartographer_zombie_villager_head_name: снежного крестьянина-зомби картографа
+swamp_cartographer_zombie_villager_head_name: болотного крестьянина-зомби картографа
+taiga_cartographer_zombie_villager_head_name: таёжного крестьянина-зомби картографа
+plains_cleric_zombie_villager_head_name: крестьянина-зомби священника
+desert_cleric_zombie_villager_head_name: пустынного крестьянина-зомби священника
+jungle_cleric_zombie_villager_head_name: джунглевого крестьянина-зомби священника
+savanna_cleric_zombie_villager_head_name: саваннового крестьянина-зомби священника
+snow_cleric_zombie_villager_head_name: снежного крестьянина-зомби священника
+swamp_cleric_zombie_villager_head_name: болотного крестьянина-зомби священника
+taiga_cleric_zombie_villager_head_name: таёжного крестьянина-зомби священника
+plains_farmer_zombie_villager_head_name: крестьянина-зомби фермера
+desert_farmer_zombie_villager_head_name: пустынного крестьянина-зомби фермера
+jungle_farmer_zombie_villager_head_name: джунглевого крестьянина-зомби фермера
+savanna_farmer_zombie_villager_head_name: саваннового крестьянина-зомби фермера
+snow_farmer_zombie_villager_head_name: снежного крестьянина-зомби фермера
+swamp_farmer_zombie_villager_head_name: болотного крестьянина-зомби фермера
+taiga_farmer_zombie_villager_head_name: таёжного крестьянина-зомби фермера
+plains_fisherman_zombie_villager_head_name: крестьянина-зомби рыбака
+desert_fisherman_zombie_villager_head_name: пустынного крестьянина-зомби рыбака
+jungle_fisherman_zombie_villager_head_name: джунглевого крестьянина-зомби рыбака
+savanna_fisherman_zombie_villager_head_name: саваннового крестьянина-зомби рыбака
+snow_fisherman_zombie_villager_head_name: снежного крестьянина-зомби рыбака
+swamp_fisherman_zombie_villager_head_name: болотного крестьянина-зомби рыбака
+taiga_fisherman_zombie_villager_head_name: таёжного крестьянина-зомби рыбака
+plains_fletcher_zombie_villager_head_name: крестьянина-зомби лучника
+desert_fletcher_zombie_villager_head_name: пустынного крестьянина-зомби лучника
+jungle_fletcher_zombie_villager_head_name: джунглевого крестьянина-зомби лучника
+savanna_fletcher_zombie_villager_head_name: саваннового крестьянина-зомби лучника
+snow_fletcher_zombie_villager_head_name: снежного крестьянина-зомби лучника
+swamp_fletcher_zombie_villager_head_name: болотного крестьянина-зомби лучника
+taiga_fletcher_zombie_villager_head_name: таёжного крестьянина-зомби лучника
+plains_leatherworker_zombie_villager_head_name: крестьянина-зомби кожевника
+desert_leatherworker_zombie_villager_head_name: пустынного крестьянина-зомби кожевника
+jungle_leatherworker_zombie_villager_head_name: джунглевого крестьянина-зомби кожевника
+savanna_leatherworker_zombie_villager_head_name: саваннового крестьянина-зомби кожевника
+snow_leatherworker_zombie_villager_head_name: снежного крестьянина-зомби кожевника
+swamp_leatherworker_zombie_villager_head_name: болотного крестьянина-зомби кожевника
+taiga_leatherworker_zombie_villager_head_name: таёжного крестьянина-зомби кожевника
+plains_librarian_zombie_villager_head_name: крестьянина-зомби библиотекаря
+desert_librarian_zombie_villager_head_name: пустынного крестьянина-зомби библиотекаря
+jungle_librarian_zombie_villager_head_name: джунглевого крестьянина-зомби библиотекаря
+savanna_librarian_zombie_villager_head_name: саваннового крестьянина-зомби библиотекаря
+snow_librarian_zombie_villager_head_name: снежного крестьянина-зомби библиотекаря
+swamp_librarian_zombie_villager_head_name: болотного крестьянина-зомби библиотекаря
+taiga_librarian_zombie_villager_head_name: таёжного крестьянина-зомби библиотекаря
+plains_mason_zombie_villager_head_name: крестьянина-зомби каменщика
+desert_mason_zombie_villager_head_name: пустынного крестьянина-зомби каменщика
+jungle_mason_zombie_villager_head_name: джунглевого крестьянина-зомби каменщика
+savanna_mason_zombie_villager_head_name: саваннового крестьянина-зомби каменщика
+snow_mason_zombie_villager_head_name: снежного крестьянина-зомби каменщика
+swamp_mason_zombie_villager_head_name: болотного крестьянина-зомби каменщика
+taiga_mason_zombie_villager_head_name: таёжного крестьянина-зомби каменщика
+plains_shepherd_zombie_villager_head_name: крестьянина-зомби пастуха
+desert_shepherd_zombie_villager_head_name: пустынного крестьянина-зомби пастуха
+jungle_shepherd_zombie_villager_head_name: джунглевого крестьянина-зомби пастуха
+savanna_shepherd_zombie_villager_head_name: саваннового крестьянина-зомби пастуха
+snow_shepherd_zombie_villager_head_name: снежного крестьянина-зомби пастуха
+swamp_shepherd_zombie_villager_head_name: болотного крестьянина-зомби пастуха
+taiga_shepherd_zombie_villager_head_name: таёжного крестьянина-зомби пастуха
+plains_toolsmith_zombie_villager_head_name: крестьянина-зомби инструментальщика
+desert_toolsmith_zombie_villager_head_name: пустынного крестьянина-зомби инструментальщика
+jungle_toolsmith_zombie_villager_head_name: джунглевого крестьянина-зомби инструментальщика
+savanna_toolsmith_zombie_villager_head_name: саваннового крестьянина-зомби инструментальщика
+snow_toolsmith_zombie_villager_head_name: снежного крестьянина-зомби инструментальщика
+swamp_toolsmith_zombie_villager_head_name: болотного крестьянина-зомби инструментальщика
+taiga_toolsmith_zombie_villager_head_name: таёжного крестьянина-зомби инструментальщика
+plains_weaponsmith_zombie_villager_head_name: крестьянина-зомби оружейника
+desert_weaponsmith_zombie_villager_head_name: пустынного крестьянина-зомби оружейника
+jungle_weaponsmith_zombie_villager_head_name: джунглевого крестьянина-зомби оружейника
+savanna_weaponsmith_zombie_villager_head_name: саваннового крестьянина-зомби оружейника
+snow_weaponsmith_zombie_villager_head_name: снежного крестьянина-зомби оружейника
+swamp_weaponsmith_zombie_villager_head_name: болотного крестьянина-зомби оружейника
+taiga_weaponsmith_zombie_villager_head_name: таёжного крестьянина-зомби оружейника
 
 # ТЕКСТУРЫ \===========================================================================================================\
 
@@ -385,6 +614,7 @@ cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW
 chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ==
 ghast_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19
 slime_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UwY2ZmZDRkMzIwNjA2YmNkZGFlNmU5OWRlNWMyNGU1NzQzOGM3OTFkN2QzZmNhMjc1MTRlNDU4MjI5N2VhOCJ9fX0=
+zombie_pigman_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVmYjJkZjc1NGM5OGI3NDJkMzVlN2I4MWExZWVhYzlkMzdjNjlmYzhjZmVjZDNlOTFjNjc5ODM1MTZmIn19fQ==
 squid_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRmZTgzMmE4NGViYTI3ODQ0NDkxN2FkNjFjZDFiZGUxNWRiYjM3NDIxMzE2MzZmNmEyOTcwODI5YzBiMDVjYiJ9fX0=
 # Волки - 17
 white_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkNTFlYWMzOWVhOGJiNWYzMjdiNTljM2IxMjZjNTA2ZTQxZjdlNzA1YWViMmExOTc2ZjFhYmNjZThjN2QzNCJ9fX0=
@@ -426,7 +656,7 @@ jellie_cat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJ
 all_black_cat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJjMWU4MWZmMDNlODJhM2U3MWUwY2Q1ZmJlYzYwN2UxMTM2MTA4OWFhNDdmMjkwZDQ2YzhhMmMwNzQ2MGQ5MiJ9fX0=
 # ----------
 iron_golem_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODkwOTFkNzllYTBmNTllZjdlZjk0ZDdiYmE2ZTVmMTdmMmY3ZDQ1NzJjNDRmOTBmNzZjNDgxOWE3MTQifX19
-bat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU5OWRlZWY5MTlkYjY2YWMyYmQyOGQ2MzAyNzU2Y2NkNTdjN2Y4YjEyYjlkY2E4ZjQxYzNlMGEwNGFjMWNjIn19fQ==
+bat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRlNzVhMmNjMWM5NTBlODJmNjJhYmUyMGQ0Mjc1NDM3OWRmYWQ2ZjVmZjU0NmU1OGYxYzA5MDYxODYyYmI5MiJ9fX0=
 witch_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIwOGVlZWRmNDVkZTZhNDYyMzMxN2RmNzQyN2E5YjVmYWYxM2EyMzIzMDhlM2M5M2VkYWYzMGJjNTAwODBkNSJ9fX0=
 # Лошади - 35
 white_none_horse_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWNkOGMyNGEzZmQ5MGJjYWU2OWZhMWZhZTA4YmExNmMzN2Y0MmNhZGE3MWQ0NGVkZTJjNjRlMDBjOTE1NzZkOSJ9fX0=
@@ -563,9 +793,222 @@ cold_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJl
 temperate_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYzZTI5ZGQ5NDdhMTc3ODk1ZjYxMjFkMjMzMWI2NWFjM2Y4OTZmZGE0YmRkMTE1MTQ5MWU0MGI4MDQ5NTJhNyJ9fX0=
 warm_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU5MzEyYjViMmJhYjlhZDUxZWE0YjZhNDA3ZDZkMzkwYmI1MDQzNDA4NzU3Yjk3NmE3NTU2ODk4YWM0M2RlMCJ9fX0=
 allay_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTUwMjk0YTE3NDczMTBmMTA0MTI0YzYzNzNjYzYzOWI3MTJiYWE1N2I3ZDkyNjI5N2I2NDUxODhiN2JiOWFiOSJ9fX0=
+warden_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZmNzQzNjFmYjAwNDkwYTBhOThlZWI4MTQ1NDRlY2RkNzc1Y2I1NTYzM2RiYjExNGU2MGQyNzAwNGNiMTAyMCJ9fX0=
 camel_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmE0Yzk1YmZhMGI2MTcyMjI1NTM4OTE0MWI1MDVjZjFhMzhiYWQ5YjBlZjU0M2RlNjE5ZjBjYzkyMjFlZDk3NCJ9fX0=
 sniffer_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU1YTgzNDFjNDc4YTEzNDMwMjk4MWU2YTc3NThlYTRlY2ZkOGQ2MmEwZGY0MDY3ODk3ZTc1NTAyZjliMjVkZSJ9fX0=
 
 # Жители -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-# Зомби Жители -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+plains_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWUwZTk1OTFlMTFhYWVmNGMyYzUxZDlhYzY5NTE0ZTM0MDQ4NWRlZmNjMmMxMmMzOGNkMTIzODZjMmVjNmI3OCJ9fX0=
+desert_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3Y2I1MzJmODViMzNiM2IxNDEwMjBhYTA1MWMzNWRjOGU5Y2MwYWUxM2VhMjU4ZjFkZmU1ZTA0NDVmM2JjYyJ9fX0=
+jungle_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDRiMDYyYTlmODM5OWRjY2I2MjUxYTc0ZTYxODY0NzM0MmEzYzAyNDBjYTU2ZjM0NjE0ZDUyZjYwYTNmZWNlYyJ9fX0=
+savanna_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTIyNTY4MzU0ZjUzNWIwOTQwMzVjZWU4NjhhNGY3OTg1Nzg4YmQ1NzU1YjgwYzBkYzhkZmM0NDM5NjlmYWVhNyJ9fX0=
+snow_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjBjNjQxZTNkMzc2NGVkMWMxZjE5MDdjNDMzNGUyYjEzMDNlMjE1MmIxM2QxZWIwYzYwNTc2M2Y5N2ZiMjU4YSJ9fX0=
+swamp_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTFkZjFmZDBmOTkzN2M2MzFjNmVjMjZlNGI0ZWM2MWRkNmJhMWRmYjJiYTA3OGY0NjM3OWQ5OTNlZTg4ZDczNSJ9fX0=
+taiga_none_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzdkMjE0N2FjNDdhMWM5NTg4NTU3ZjkyZjgzMTA5MjYyYTkzZWNmMzIxNzBhYThiNjIwNTZlMTYyOWY3OTBhMiJ9fX0=
+plains_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzVlNzk5ZGJmYWY5ODI4N2RmYmFmY2U5NzA2MTJjOGYwNzUxNjg5NzdhYWNjMzA5ODlkMzRhNGE1ZmNkZjQyOSJ9fX0=
+desert_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTk4YTI4YWE1ODhjNDRmZjRjOTM0NDZhN2MyOWQ4M2VmYWMxZTVmYzhlOTBkMWQ2YzM4NmM0MTA1ZGNhOGY3NyJ9fX0=
+jungle_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTk4ODc5NWFlNTU2ODI5MTVjZTJjNzBmYmZiZTI0ZTQxNGU4ODJjNTBkNTJmMjI4MWQwNzA0ODhhYzE4MTE1In19fQ==
+savanna_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGQ5ZWU1ZDhiNThmZGRkMjdiYzY3OWMwNTQ4ZjU1YmFhODQ1ZjlmMWRmNWU4OGM3YzViZGE2ZWI5ZGYyYjM5OSJ9fX0=
+snow_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2NjMDIzNzJmNjI5MmExMzFhYTAzNWNlZjhlNTI0NzVlZmE5NjYzNTJlMDVjMmRiYTM3NGYxMzA5ZTU2OWRiYiJ9fX0=
+swamp_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjhjMGRkMDc5N2ZkMWVlOWYxODQ5ZDRhYzFlYmI4NzFhZjdmZTYxMGM5Y2E2MTY2MGNlMTEyYmU4NDJmNmI0MSJ9fX0=
+taiga_nitwit_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc2NmIzNDY1NTBlZjJjZjJmNjZiYzU4ZGU5MzAyZjZkNWY5OWZkOGEzMjljNjI3MTM3ODk4OGIxYjkyMTA5NiJ9fX0=
+plains_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjUyMmRiOTJmMTg4ZWJjNzcxM2NmMzViNGNiYWVkMWNmZTI2NDJhNTk4NmMzYmRlOTkzZjVjZmIzNzI3NjY0YyJ9fX0=
+desert_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBhM2U2Yzk2MWZiNGQ2ZWZjZjQ1NzY0NTVmY2QyN2JjNzg0MDEyNTZmZGYzOWIyNTQ4OGYzMTk4NGFmOTZiYSJ9fX0=
+jungle_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWRhZDZjYThlYWU1MDViYWVhOGE0ZjJlY2ZmZTcxOWYzMTU1YTIyZDI4ZjgyZDgyZDUyODQ0MGYxYTc3YWExNCJ9fX0=
+savanna_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2Y2Q5YTlmYjRiMTNmNDlkMjViODJhMTQwNDBjMDQ1ZmY1N2FhOGMyNzljY2UyMGEyNTAzYjgxODRkOWI5YyJ9fX0=
+snow_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWRjYjIxMDkwY2Q3ZTk3MDY2YTFmMWRjYWU3NzhjZGEwMzJkZjhhZjk1Mzc2N2QyYTA0ZjRhNzhkY2ZjMjQ5NiJ9fX0=
+swamp_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWE3YWJiMTI3YjY5MzM4YTgxYjg3YTE3YjY2NDIxNGVlOWZlMDQzN2M4YjU3N2EwZTM2NzRiMWM2ZDBmY2E3NyJ9fX0=
+taiga_armorer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZjOWZiZTE0MjJkNWIwZWRiZTA2NTBlNTExYjFkOWMyMjkxNDYwNzUyYjA2NmM0ZjcwMWMwMjk3YTYyMDFlOCJ9fX0=
+plains_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY3NzRkMmRmNTE1ZWNlYWU5ZWVkMjkxYzFiNDBmOTRhZGY3MWRmMGFiODFjNzE5MTQwMmUxYTQ1YjNhMjA4NyJ9fX0=
+desert_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGE2YjcxMzZkYjkwNmEyYWY1NGZkNDQ2MDk0ZjVkNGQwNzRjNDYyNTY2NWJjZTU3MDZhZDYyMDhiOGIzODNmOSJ9fX0=
+jungle_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWE5ZTI0MjFjZGMwOWYyZWUyNzEwZTgwYmJlYTNmNjRmZjM1ZjcyOGNmZjhkZWZhOGQ4NzU0MGVmZTc5NjZkIn19fQ==
+savanna_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzY2NzE1MTE1ZGU3NjZjOTQ5ZTg3MDBiNzY1MGM4OTk0ZmQzZWViOTdiZDE4MzZjMmUxNmI1ZDhkNTU1MWI1ZCJ9fX0=
+snow_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2JiNWJmYTlhYzU0MTJlN2QxMTZmOWQ0MjRlMGZkM2ZhNDBlZWRjMmMzZTdjOTA2YzA1NWJiNWY0YzVjNTg3YSJ9fX0=
+swamp_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTM5MzM3MDQ0NGVlOTE1NTk1NjMwY2Q5MDBkMDY1YzAzY2M1YzYxZjdhOTFlZGQ4ZmVjMjRmMjA0YjNlZWI0ZiJ9fX0=
+taiga_butcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjJlZmI1ZGQ4YTUwZDM3OGIzNmRiMDg4MDBmNTEzNzUwMDA4YmY3MTI0NmZhZWE0YjYzYzAwZDhiNzg4MzQ2MSJ9fX0=
+plains_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQyNDhkZDA2ODAzMDVhZDczYjIxNGU4YzZiMDAwOTRlMjdhNGRkZDgwMzQ2NzY5MjFmOTA1MTMwYjg1OGJkYiJ9fX0=
+desert_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZmMjVlYTFjMzlhM2Q3MzU3OWU1MzMwZTA0YzJiMTczYmEyZmQ1YzBjYTM0NTJiZTVmZjFhYWUwODNmNjMyOCJ9fX0=
+jungle_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA4ODBjNDM2N2M0MTYyYTFkYmJiODhjZDg0ZTUyOTA2YjE4NjEyZjExODViZjZlZmU4MjQ0ZmVlMjkzOTc5OCJ9fX0=
+savanna_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjJmOTQ0MjIyZmY2OTNmZTA4OGJkNTQzYzhlZmRkMzI0NmVhYjZhMzQ5NzhhY2RlNzc0ZjdlMjk1ZGVlOWUxNiJ9fX0=
+snow_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE0Mzg5NWIwNGNjZTdiM2FkOTU2NjIwYmI0OGQxYWFhYTZiYmRjYzEwYmIzYThjNGFhMGE1NTkzOWYwNTBiZSJ9fX0=
+swamp_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmUwNDA5ODMzMjhkYTQyYjRlZGE5MzFiZGNlZmIzOWE4ODE2YjMyMDQ1ZGExZWQ5ZjMzNWU1MzhjMThmM2M0MSJ9fX0=
+taiga_cartographer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxZmI1MmI3YWU4MmJiMDkxYzU0YzMzYjdmYTZiODBjOGEwMjUwMzcyYjlkMWNiZDZmNzk2NTIyZjY0NzlkIn19fQ==
+plains_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTg4NTZlYWFmYWQ5NmQ3NmZhM2I1ZWRkMGUzYjVmNDVlZTQ5YTMwNjczMDZhZDk0ZGY5YWIzYmQ1YjJkMTQyZCJ9fX0=
+desert_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDI0YmE3NjBhNjFkZDI1NmM1MmIzMjUxMjlmNDYwMTZhZTg5MjIzMmEwZGVhMTcxNWY5OTdmN2M0ZDYyMmJlZiJ9fX0=
+jungle_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODZlN2E5MGJiNTM5MDhjMTljY2Y3OTVlNmVhNWMxOWQwOTdiMTlmMWYxMTFmYzJmMzBhNjFlNjg5ZGE4YTRmZCJ9fX0=
+savanna_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZjYzhmYTgzNzk2NjVmYmI4YzkyNGU0NTIzNWRhMWM5ODhjMWM1MjNhZjFiMjQ3OTc5NmQ0YTQ5YWYxYzVjOCJ9fX0=
+snow_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2UzZDM2MzVjZTQxMWFiZjFlNGYzNzNkMTYxZDA3YjhjNDdlMzU5YjZjNTZmNzRiNDEzY2I0OTRhYzc0NmUyZCJ9fX0=
+swamp_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE4ZTNlMjI0YTc2OGJiNTc3MWQ2ZTQ2NTNlNDhhNTRmZTZjZDA5NWZjMzk5ZDNlYzM5Yjk1YzI1NDRhZjA1NCJ9fX0=
+taiga_cleric_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGJmYWQzYjBmYzhkMTlhN2RkYTY4MDg3Y2Y1YTVlNjg2NWNjOWZhZjJlNzllZGYxMGFmNGJmYTcwYTRkNGJkOSJ9fX0=
+plains_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTVhMGIwN2UzNmVhZmRlY2YwNTljOGNiMTM0YTdiZjBhMTY3ZjkwMDk2NmYxMDk5MjUyZDkwMzI3NjQ2MWNjZSJ9fX0=
+desert_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU1ZDYxYTI0MDllYjBiNDliM2U4OGIyODg4NDY3ZjIwYTNiMDYyMTJhMTBlN2I2ZWZiOWNlM2JjMWEwZTIwZiJ9fX0=
+jungle_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdmMzM4YmNkOWZhYzBjNjY2ZjJhOTI1Y2YwN2Q5YjBmNWZhOWY1ZmQ5NDQzZjU5NTFjZTU0ZWM1YjAxNzYxMCJ9fX0=
+savanna_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljOTRmYWE3YWM5YjA3NTJkYzdkYTczODZiNGQ4ZmMzNGUyOTE2ZGE1YjAxNzg5Mjc1YmJjYjdkZmNlN2ZjYiJ9fX0=
+snow_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQ5NWFkM2YzN2JiMzIzNzg1ZjhkNjgxNjc2M2U1YTczOWUyODE0ZDYxMWE3YWI0YWZmZjk3NmY5MTcyOWZhZiJ9fX0=
+swamp_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJjZmM3ZWFkZTAxNmE5NjljMmIzYTg3ZTAxMGEwMmFjOTEwZGY2MGQzNzE0Zjc2MTg0YjJjMTdhNzAzMTAxZSJ9fX0=
+taiga_farmer_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjA4YmRiNTNjNTVmZWYzMmEwNjU4ZTFjNzk2NjYxNGFmMGJmZjYwOTEyNDliOGZlM2I3N2EwMjc1ZGE4MmU0MyJ9fX0=
+plains_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWMxNWU1ZmI1NmZhMTZiMDc0N2IxYmNiMDUzMzVmNTVkMWZhMzE1NjFjMDgyYjVlMzY0M2RiNTU2NTQxMDg1MiJ9fX0=
+desert_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQxMTExMTFlNTMyZDY4ZjBlNGY5MTNhNGUzYWVkZDBjOWRmYjI4NDdhOGFhZjFmZmE1MmIzZGFiY2ZmODZlZCJ9fX0=
+jungle_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdhOWU4YjFhZmU1ZWU1ZGQ0OTg3MzRjYzIyMWMxN2I3MWYxZGUxYTZkYzhlYWIyZmM4OGMzMzJlZDI0NGM5NyJ9fX0=
+savanna_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjYWNlZjVmMDRiZWQ0MmU4YTgwOGNjZWMzOTg4OWU2NjZmYjEyOTllOTlhOWUwOTA2MGY4Y2YyOWU2YmFmNiJ9fX0=
+snow_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFkNjQ0NzYxZjcwNmQzMWM5OWE1OTNjOGQ1ZjdjYmJkNDM3MmQ3M2ZiZWU4NDY0ZjQ4MmZhNmMxMzlkOTdkNCJ9fX0=
+swamp_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDIyMzY2NDg4NmQ5NjY0M2QzYWZkYzRhMmFjNzJlYmMyYmNkMjI5ZTUxNzUxOWUxNWMzZTdjMTU3MGFkNzQ1ZSJ9fX0=
+taiga_fisherman_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM3ZjQ0YjUxMWY3MDYzMTg3ZDBmZTEyYzc0YTBjYjhjOTNmMzRkMGY1ODczMzhiMmE5YzIyZjNmYTJmMjEyIn19fQ==
+plains_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTc1MzJlOTBjNTczYTM5NGM3ODAyYWE0MTU4MzA1ODAyYjU5ZTY3ZjJhMmI3ZTNmZDAzNjNhYTZlYTQyYjg0MSJ9fX0=
+desert_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQ0ZDEzYmFmNjVlZTE5N2RmYzZlYzI4NjU3ZDI1ZDg5ZjQ3MjY2MjIwNGUxM2NiZjc2MWY5NDEyYzg5MTMzNSJ9fX0=
+jungle_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllN2MwNTRhOGFiMmQ3ZjY0NDdkZTQzOGQzMzczMjM2MzJlOWMzZmNkYjMwZDM5YWMzMzZiNTIzZjg0ZTNlNiJ9fX0=
+savanna_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmFjMjIyZWZjNmFiNGJkMWM3MDM1MWRlMDA3ZTM3YmYzZDAyOGMxZDkzZjA4ZWZlYWVhOGEwN2VjYjYyODY3YiJ9fX0=
+snow_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUxMjYxNTgyMjBlOTQ2NTE3YjJjMjBlMTM4MDU5MjhkZjA2ZTE5YzExMDFiZGVhMmJjNWE0ZmM5NWY5YzAxMSJ9fX0=
+swamp_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJlZDkzMWVlNmI3NzUzOWQyZmQ3ZDI3MTYxN2RiNmIxOTM2NWNiMGUzYzUyZWFjMDA1MjcyMzAxZDA3YWM3NCJ9fX0=
+taiga_fletcher_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTljNDVlZDIzOGUwYjBjNjY0ZGRlMDlkZTY0YmE5ZTYwMzhkZDIzMWRkNTg0NjZmYmRjZGNjOTExZTBmZmJkMiJ9fX0=
+plains_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTViZjQxYzJkYWFmYzU0YjU2MGEyZTZlM2I5NDc0ZmM5ZmJiMTFhNmM5OWZjZWY4MmY2ZTg2MzhhZDIyNzg5OCJ9fX0=
+desert_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWU2MWVjYmI4NjQ4N2VkMTZmZWRiMjc1ZGI5MmM5YzUwNDNhODMwZjUyZDk3M2JhNDRiMjhhNzc0MjAwNmI0MyJ9fX0=
+jungle_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJhMzU0ZGI0YjBhNzMyZGQ4NDdkZmU0YWQwYTA3MjlhYmJjN2I4YzUwMGI5ZTYzODE5NTBjZTg1NmYxZGUzOSJ9fX0=
+savanna_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ1Yzk5YzgwZDAzNDVjNGJlM2ZjM2EyZjBkMDVhM2UyM2E1YzRiZjdlOTkxNTY4ZWVlNjRhNjgwNmYwNDhjMCJ9fX0=
+snow_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBlNGFhNmY1NDU1ZTMyMTA1OWUyMDJhYmM5ZDllMjM2NzU2NjMwNzBlOTJhMDc5ZThjYjU0NGY3YmU0Yzc1NSJ9fX0=
+swamp_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTAwN2M0YTNlM2I4ZDMxYjk0YTk1MTczYmMyYWVhNGI3MThjMTUwZjAxNjZmMGM5NjRjYTllMDRiZTY2NGEyMiJ9fX0=
+taiga_leatherworker_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzBjNmMzYTkxM2FmOTI5M2Q2MzcyYjBiZDRjMmRlMmNjNmQzYjZlNDczZTNmYTBmZmYwMzQ3NDFhNjEyODI5ZCJ9fX0=
+plains_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTY2YTUzZmM3MDdjZTFmZjg4YTU3NmVmNDAyMDBjZThkNDlmYWU0YWNhZDFlM2IzNzg5YzdkMWNjMWNjNTQxYSJ9fX0=
+desert_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJmZjU5MDFiOTdlZmVmOTIyNTU1MzI1ZTkxMGE2ZDM1Y2M0Njk2N2ZmOGE3YzJhMGU1NzUzYWYyM2RkY2ZmMiJ9fX0=
+jungle_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2U1OTk1MTA2ZDA4MGYxMGIyMDUyZGUwOGUzNTVmMzRhMjIxMzkwNGQ5ZDMyZjZkYzJkMWIyN2JlYzc1M2I3NCJ9fX0=
+savanna_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFmNzE0MTMzY2U3OGQxMTgxYzRkNWQzZTUzNzExZWNlMTBjNGM5YTI4MjAxMTg4ZWUxYTZmMzVjYzBmYTNjYSJ9fX0=
+snow_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTgwNmY5NzY3ZjA4N2UzZTRjMDlhZDAxMmJmZDA2M2QwMTNiYTRjMzE2OWZiYjBlZmQ3NTM4ZTI4ZDdkODNkIn19fQ==
+swamp_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTc0NzM1OTZhMWNiNDBjZjFiM2VjNWY0NmYyZjlkNTkwZDVlNzhkMDUwNzY4MGE3YjliYzQzMDQ1ODdkYTBjOSJ9fX0=
+taiga_librarian_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRmMDRlYjIwY2QwYjgyYWFlZjI1MjBhZWQ5ODY3YzNjY2EyNDdhNGNkOTc1YTEyZWE1MGRmMDNhNzE3NjI0MSJ9fX0=
+plains_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmMwMmMzZmZkNTcwNWFiNDg4YjMwNWQ1N2ZmMDE2OGUyNmRlNzBmZDNmNzM5ZTgzOTY2MWFiOTQ3ZGZmMzdiMSJ9fX0=
+desert_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjI0MjBmNGUyMWRlYTc3YWFkMDAxZThjYmIzMDk5MDg3M2I4NTQ1YjIxZTBhYTdjYjIzOTNiMjNkZGZiMDlkMCJ9fX0=
+jungle_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkxYzRhZTlkYjg1Mjk1MTU2ZWNjYTRmN2Q4MWQwZGQyNDU5MmEyOGY2MGVjOTY5YjZhYzljMjY3ODlkZWQ0ZiJ9fX0=
+savanna_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzJkMTFjMzE1YjgyNDk4MDEwZTE5YzRjMTAwNTQ2NDRkY2NkZmY2MjlmZmU2YzNhMDFiYTZhOWE5ZjBjODg1YSJ9fX0=
+snow_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmUwN2U3MTkxMTQ5NDU4NDNkNWNlOWIxYzQ1Y2NlODgyM2MwZjczMzAwNjU1MjQ4NWE2MTFiMTI2YWNlMTQ4NiJ9fX0=
+swamp_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU1MjNlNjZjZGIwMDc4ZThkNDJhM2U3NGJhM2Y4N2U5ODdjMzI2M2E0MDYzZDZkMmFhMmRhOGE5ZGRkNWJmNCJ9fX0=
+taiga_mason_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxZWM2MTJmOGY3ODk4NGEwOGY4MjkwYmQzZjFjMTg5MmI0Zjc4MjdiNTI0ZGJhYjdlYWFjYzlkZDllMjJiMiJ9fX0=
+plains_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTllMDRhNzUyNTk2ZjkzOWY1ODE5MzA0MTQ1NjFiMTc1NDU0ZDQ1YTA1MDY1MDFlN2QyNDg4Mjk1YTVkNWRlIn19fQ==
+desert_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UzNmMzNjZhZWIzMDM4NWNmZjE1MWE4Y2Y5MGJhYzVhODk3OWE1NWJjMmE4MDg4NzVlMjMzZDBmODFiMjRhOSJ9fX0=
+jungle_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM4YmMzODFmNzRjZTU4ZTg2ZDlkNDE3ZDUxMjVmYjcyZTc1OGM1OGQ5M2YzNGNhZmM4NmQxZmM1MTQ0N2Q1MyJ9fX0=
+savanna_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDMxYzBmNDYwM2I1MWViNmQ4ODkyZjhlYzBiNTIwOTc5MDQxZDY3MWI4ZDM3OGM4YjI2ZDA5N2I4ZjdlMTMyNyJ9fX0=
+snow_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDE2NDRhNTUyZGQwNmY3OTc0MTNjMDAyZDQxZGE1MjkwNGE3YmNmZDc0NGM1ZDJjMWZlMzQ4ZDlmNjZjYmJlYiJ9fX0=
+swamp_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjljZjE4YjA0NDdmZjFkZmNmYmE5ZTRjNGFjN2Y2ZTI2YTk4NjM1MmRkMTg3OGM2YTFlMDBkMGY1ZGQ2MjExZCJ9fX0=
+taiga_shepherd_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU3NzFiNzM4MzQ5ZDFkZTBlMDFlODk0YWU0MDE2ODZmNTk4Y2ExOWEyMDg4YjA5NTE0OWZkZTliNzZhNDM3NyJ9fX0=
+plains_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2RmYTA3ZmQxMjQ0ZWI4OTQ1ZjRlZGVkZDAwNDI2NzUwYjc3ZWY1ZGZiYWYwM2VkNzc1NjMzNDU5ZWNlNDE1YSJ9fX0=
+desert_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjlkOTA0ZmRhZTY4ZmIxMjBlOWFlMGYzNTM3NDYwZjJhN2MxZGU5MTU5YWIzZjJiNDRjODQ0MDQ4ZmViYWJlYiJ9fX0=
+jungle_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZlYzYxMDk3ZTExYmZlNmYxMGFhYTEyZTVjMGE1NGM4MjliZGJkOWQ5ZDdhMzJmYzYyN2U2YjVhOTMxZTc3In19fQ==
+savanna_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2Q1ODZmNTViZTQyOWRiNjg5YzA3MGM0N2FhOWIxMjg0Y2Q1MWRhNDkzNzY4NTU5ZDcxMzJkZjhjODkxNmFlZCJ9fX0=
+snow_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3ZGIzYTVjYjVkZDY4MTFmYTg3ZTJkMTEzYWE2MDU3YzY2OTA3OGRkNjJmZjI4YjM3N2YxNjgyNzdkOTVjZSJ9fX0=
+swamp_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQwNzRiMjZiMDljNjdmZWVmZWE0ZTAyNDVmNjMzMDZlNDVjYjkzNWU5OGRiZmFhMzAyMGViNDBjNzA2OTcxOSJ9fX0=
+taiga_toolsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE4NTEyNTg0OTEzNDFjMDAxNDlhOWM5MmRlMWFjZGU2NjViMTMxYzhhNzRjOWZmZTBjYjFlM2E1YWQ5NzQ5In19fQ==
+plains_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU0MDliOTU4YmM0ZmUwNDVlOTVkMzI1ZTZlOTdhNTMzMTM3ZTMzZmVjNzA0MmFjMDI3YjMwYmI2OTNhOWQ0MiJ9fX0=
+desert_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJiYTY5ZjZlZTNlMTI4YmMyZmVlYzc4YzI0N2IyYTJmMDBjM2FlYTExZDg5MDZjNzI4ZGU5MmM2MGE1NDJlZCJ9fX0=
+jungle_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjVmYWZhMmJlNTViZDE1YWVhNmUyOTI1ZjVkMjRmODA2OGUwZjRhMjYxNmYzYjkyYjM4MGQ5NDkxMmYwZWM1ZiJ9fX0=
+savanna_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzFiZWFhMDk5YzgyMzMzMmU3NzgwYTMyMTEwZjViMGJmYzI1NDZlNTNmZGU4ZTIwNjgxNzMyNTg5NDAxOGYzIn19fQ==
+snow_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjg0NGUzZmZjYzE3ZDRhYjBkMGVlYmI2YmZkYjk2MDNlMmY3YTA5NWQ3MDAwMjhjOWRiMjc1YWUxYTk1ZTdmMiJ9fX0=
+swamp_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYyNWM2NGJlZGVkMTg3NWI4Y2Q5ZmRmODEwZjE2NDMwZTc0MTk3MzcxNTcyMDI0YjczMDdmMjY2Mzc1NzNmNiJ9fX0=
+taiga_weaponsmith_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGUwMmZlYmI0YzUyZGIxZmI5ZTFlNWM4NTJhNGU3MmQ4ZGZlNmM0YzA1NWE0NjQ5YWJmM2QzNTdkMjMzZmMxYiJ9fX0=
+
+# Крестьянин-зомби -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+plains_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM1MmY1ZDVhZTM4ZjE3ZGYxOTE3ZmU1ZmQ5N2RhOTFmNGMzYjY2YTFkZDBhNGI1MTEyNzMwMmI0ZWY3NmYzMyJ9fX0=
+desert_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODVhYmRlN2JhOTllNWNmZGFhZWFjNTE0YzZhYTFkNGI0YWVhMGQxZTNjNTY5MWQ1NjA4MjhkNjYxZjQzM2RkMiJ9fX0=
+jungle_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ5YTQ2Mjc1ZGVjMGMyNDdkZjk4NmRmYjRiMzUxZDI4OWYwMjQyYjVmY2Q2MjBkYWFlMTEzNzI1NzIwYzdjOSJ9fX0=
+savanna_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWIyNGVjMzk5ODI1MGY5NTA4MzYxMDM5MTgyMjY2Njg3MTAzYjg5NGVjOGI5NDg4M2ZlYWNkM2MzNTFkYjUwNiJ9fX0=
+snow_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWYxMmI3YjUzMDAxZWY4NTE3MTlmZGY4YzA4OGRlMDNiMTFkNGFlNDNmNmZmNTNhYzVhMjY3ZDI0ZGYxZGM2MCJ9fX0=
+swamp_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJjY2EyZDlmMGFlZjQyY2MzMDg2NDE1ZTE0MTk1NjBmMzQzMzRiMTY3YmViZmVmZWNjNDM0OTJjYjE0MTc4OSJ9fX0=
+taiga_none_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc5ODYyMTI0ZmNmOTVhZWNlNzA4NjI0ZDQwYTRmZTQ2NTgzNTExMTNlNDM2NTI0ZWI1ZjIwZjhmZTVlNjZiNiJ9fX0=
+plains_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWI5NDBlNzlmOTEzYWE1ZTFlZmY4ZmE5NTA1NWM5ODM0OWNiYjk0MzAzYTRkYjYwYTc5Yzg4NmExN2FhYmU1MiJ9fX0=
+desert_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODViMWYxN2ZlMDQxNWYyYzBjMGQzNzYzOGQzYjkyMTUzNjZkZTYzNjIwMDQzNTZjNGM1ZGZjOTJlYjA4YmNlMSJ9fX0=
+jungle_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjBiMjZjYTIyYzc2M2QzNTJmMzBiYmMzZWVlODc0NzcxMjU3NzNjZTE2ZTY2NGYxZmIwZjljOTZjOWE4ZGI4MCJ9fX0=
+savanna_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTEzMjg3ZjE1ZTIxZDgwMmZhNGFlOGJhMDdmYTdkM2RiMGEzZDgwYTUxZjUyMzAzNGQ1NzVmZWFiYzU2NGQ1In19fQ==
+snow_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjBlYTQ4OWE4ZWQyOTkxZjk3ZGE0NzYwYjkzNzlkMDA5MjVlN2M3OTFmZjRkZjRmNThiM2VlNmM3YzlmMGU5YiJ9fX0=
+swamp_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2YwYzIxYjBkOGRjN2FjMTU4NWU4MWExZWU2OGJmY2M5MjkyYTkwZWEzODU4ODU4NmY3M2E2ZDZhZTIzYmQ1NiJ9fX0=
+taiga_nitwit_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjJjNGQ2ZmQ2MTc3YzU0OGMwNzhkZmY1MjRhNzA3OWI4YzgxOWQwNDA5NGQ4NTZlYzQ4MDg3ZTEwNzJmMzhhYiJ9fX0=
+plains_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTg4N2U5YzczODUxZmM0ZjVhOTYzNjE5MjhjZTBmZjQ3YWFkMjdjNzYyYTY4MDVhZjgzNzJlNzBlOGRiNGQ4YSJ9fX0=
+desert_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjViODA5NDNhMTYzMzljOGI3ZTM2NzIxMmM5NjZjNjczNTM5ZmY4OWQyZDFiZTAwN2FkOGJmMTJmZTgzMzUxZiJ9fX0=
+jungle_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTBmNWJlYzBmNTBjZjM3MDc1OWNjYWQwNmNlMzViOGE0NmYwNDk0MmRiNmFmYWUxMGZmMDRmMGZkNjc3YTlhMCJ9fX0=
+savanna_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU4Y2I5ODJiM2Q2NjRhZGVmNDI5YjljYzViZmM0NzNlZTcwNWVjNGY0YjczODVjNmM0MTYxMDU0NTgyMWE1NCJ9fX0=
+snow_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRmNzY3NDQ4MmZlODRiYzk1MWMzNjFlNTA1NDg1ZGZiMjRkNzNkYzE1MTgzN2ExYTVhMmU3OTU2OWE4YmIxNiJ9fX0=
+swamp_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWFjMDNhNmY3ODIwY2VhMjlhODI4YmM0ZmE5YThkZjM2NWNjNWM3MDg3OWQ0YmZmMzJkMzY2YWNhZTc1ZmMxZCJ9fX0=
+taiga_armorer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmFiODBmNGQ4OTQ5YWE4OTYwMzBiZTg5NzExZmRmZmQxODk3Nzg5YzMzMzUyYmY4MDJlOTcxYmM4NWI5ZWUwIn19fQ==
+plains_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjkxZjczZjA3YmZkMzg1NzI0NmU4MTRjNjkxZDVkZmZkZGI1OGNmNTVhYTYzYzBhYmM3M2FkZGM1YWFlNmUzOCJ9fX0=
+desert_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQ5YmYwYjU0YzhmMzk4YjIxYmE2YWE4NDkwYTQzMDg2OTY2OWU3ZjdlMmI1NDdlZWJiZWVmNmU1ZTViZTE5ZiJ9fX0=
+jungle_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkNzkwZGNkMTMzZDI4ZDk1NGQ2MjIzMjNjZjQ3MzE1MWI1ODc3OTM2MTJmZWViNTA5NDljNTIwZGZlOTc1NyJ9fX0=
+savanna_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGIwZTk4M2RhMjEwNzE2YzgwMDMyNjUzNDU4ZjBiMTJhYjM3YjczNWEzZWRhNDMyOTI5YmVmOWU3NzE5NmIwNiJ9fX0=
+snow_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q2YmY5YzdiZWQ1NDQ3YjhiNGMyNmQ4MzMwMzU3OTBkZDZmMTNiMTA0NDM3MjgxMDAwYzBmM2IxMDQ1ZjIxZCJ9fX0=
+swamp_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQ3N2Q0NzdiYjczZDMzOWRhNTAyY2FkNmJhMzg4OTA0ZTM1NTNlZjI4NWQyOTk0ZGZkODg0Mjc2ZDA1MjY5ZiJ9fX0=
+taiga_butcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmU3OTAwZTI0ZmFjNWVhYzQxOWYwMTdiNjY4NTMwY2Y1OTZjN2Q4NWFmODIxZmJkMjFlYmRiY2QyYWIyMGMzNSJ9fX0=
+plains_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmFkN2EwZjIwN2RkZTM0YjEzZmE1YTM0ODJiMGJjN2Q4ODAxZjdjYmUyZjI5NmJkNjVhZjIxZjBlZTJkYzc4MyJ9fX0=
+desert_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2E3NjE1YTdhNWFlNDVkNmYwNThhMTdhZDY5M2ZjNDljNzdjZjQyOTJmMDAyZTM4MzYwNGJiMmRhMGJmODRlNiJ9fX0=
+jungle_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjhiMzFlODRiYjA0NGEyYjBmZDEwOTc0ZWQ5MTI2ZTE2ZGNlNTdjZGY2NzViN2QxZjA1MjUwNzczMDA0MGI1MiJ9fX0=
+savanna_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM0NTRmNmQ2NDY2MDNmYzcxMDU3OGM5NWI2NzcwMzAyYWNlM2E5NmJlMTQ4M2VhODBmNjE0Mzk2Yzg3YjIxMiJ9fX0=
+snow_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjY3MjkxZjFmY2U4ZmY4ZjBmZDFhMzJjYzAxODE4ZDYxNjNiODFmYWYzZDJmNzFhZTRkYWM0MjRjNWRmYjk2YSJ9fX0=
+swamp_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmY5MTBlODgxYWU5NjdjM2U5YWVjYzU1YzMyZmY1YTEyMGZiM2JjZDU2ZmNkNjhiNWQxOGNhMDgzYzdlZTFmMCJ9fX0=
+taiga_cartographer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjJhMDY0YzNlOGU2YjIxOWQ3OTcxYTI0ZTcwNDQ4MTlkMTE2YTg0NmU4MzNiOTZhZTU3YmFlODUwNWRhZTViYSJ9fX0=
+plains_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTg0MmE1M2YyMzUxOGNhNjViOTRjYWI1MDg5MDIxYmE2NGU1MzkzYWQ4ZGUwZmE2MDViNmZkZDk3ZTFjZTc2YyJ9fX0=
+desert_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjdlYTRkZmVlYzIzYTU4YWMwYjllYTUzNWI1ZDllZTNmYjU0OTg1OTk3MWI4NzA3N2ViZDZhODUxMWE5MjQyYyJ9fX0=
+jungle_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdhNjgwYWVlMmE4N2ExYzBiMjBmYWI5ZjM1YTIyMjczODM0MjQ0Y2M3NmQ5MDljMTcwMzFlYmUwYjBjNWI2NCJ9fX0=
+savanna_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQzMWNiNTE0OTYyMTkyZWQyNWIyM2FhZmM2NTkxMjU3ZjkxYmQxMDA0MjlhMDgxMzM4MDY0OGVjMjM3MGNjNiJ9fX0=
+snow_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmMwNzMyYzgxMTE0Y2UwMWE3YmVmMGUwMTc5Y2Q2YmNmMGYyNTA1NjRiMzk0Nzk2ZDQ0OGQ1ZjMzNzk3MjhmYSJ9fX0=
+swamp_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZhNTc3MDViNDI1YzI1MGM1MDZkOTVlZmQ0ZDdiZTEyZGE0N2ZjMzgxODM2YTNkMmVlZDhjNmU0NDk4YWNiNiJ9fX0=
+taiga_cleric_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjk1YjcyOTQ3ZDIxZjRjOTJmNjQ4MmFmZWU1OGRhOTRlMzNhZmNkNDljN2Q0NjAyMTExNDlkZjRlMjVmNjhiNiJ9fX0=
+plains_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU1OTYyNjViOTA1ZjQ1NmQ4OWE1MWZiZTM2M2YwZmI4NzdkMTNmZDY3OGNhM2E0MmM0YjFjZTBmMDE4NmNmYSJ9fX0=
+desert_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWE4M2JhYmU2NmZkOWI0Nzk2YWQ3ODE5ODZiZDI3OTI0NTE1NzE3NTA4OTgyZGZhMzY3ODdlNDZmZWQ2YWMwNiJ9fX0=
+jungle_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFjYjQ4YmI2MmI2YTAxNTMyMTI5MGE0NDU5YzZlOGNiMzYxZTY0NDNhN2ViZjMyMmIwMzk1MmFiYTU4ZTY2YyJ9fX0=
+savanna_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0OWRiYmYwZWEzM2RlM2I0NjdmYWJlZjJhMGYwMjg4NDRjOThmODBlYWIxMTkyMjgxOWRlYjdiOTYzMTg0ZiJ9fX0=
+snow_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZkMDgyYTlkNmQ3ZjY4ZWZjMTNiNTBhYTBiMDcxMTdmMDNkMDU5ZjRmZDYxMDUxNzljZWVkYzk5Y2FjNDhkYSJ9fX0=
+swamp_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWU2MGMyNzE5YThkOGJlYjhlMDYwZjFlNzhkMGQ3MjU3Y2M3NDJhYzk1MjYxMjU2OThkNWVlNjZiMDJiMDRmZiJ9fX0=
+taiga_farmer_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIzNDUyMTU0NzVhZDcyYjkzMDhlYTJiNjg2NmVmNDMxM2FkMWVmYzdkMjVjMmNjODFkMTY5OGMwNTY0N2I4In19fQ==
+plains_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGExNjM3N2NmNDI1NWQ0ZGU3MGNjNDAwNDNlMTU2N2VmZGNhZDdlZmE4OTdkOTc1NzdjMTg0M2VmMmZjYjRhNSJ9fX0=
+desert_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjQ0NGE3OWVjNDdhZTQ1NzAyNmFmMzY0ZTBiY2FkOWQ0NTRhNTJjZGE4NjQ4YWE0ODU4MzgzMjY2OGY4OTdmMCJ9fX0=
+jungle_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFmODljYzc1YjI1NTEwNzc5Njc1MTEzZDg5MTNlNmNkODQ0NGEyOTAzNzdjZmJlYjA4ZTBhYTg5OWJlZjE0NSJ9fX0=
+savanna_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTZmMzMyZDQzNDM1ZGMwYjI3NDQ3ZTZjMjllMTc1ZDUwYjE5ODVmZmEyYjFiNGVmYTMwNjJiNDI4ZTE4YzRmYSJ9fX0=
+snow_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc4OTRkMjBiOTBlNjQwY2ZiMjI5ZTdmNjY2YTM4NWJjNWRlZmIxNGFmM2YyNTdhNjdhNjZiOWNiMjczNDQyZSJ9fX0=
+swamp_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDAxYWYwMjM3ZDExZmM0YTgzOWE5ZTdjMDk2MmI5ZGZkMzYzMDVlZjJjZGIyOTk4MjdkMGY4MjIxMjAyOWM5MSJ9fX0=
+taiga_fisherman_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGFjZWVlZmVmZTBiNzg3MTVjM2RlZWI0Yjc3YmFkOTM4MjNkMzE4ZGNlYzY0N2ZkMDJmMmJjNmNmN2JiZTcyMSJ9fX0=
+plains_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGY2YzRiOGNiYzFhYjkwZGE2MmUxMmJiMTljOGM0NmQzNzg5MzFhMmY2NjkxNGUzZmI2OTk5YWE4NzNkMGU1ZSJ9fX0=
+desert_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M5NmI5NDhiZWI5NDI2ZjIyN2ZiMmUyODVkMzY0ZDM3YjM2OTVlZjA0ZTE4YWFiMGQxNjMwMjRjZGM1MTcyMCJ9fX0=
+jungle_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQ0MDVmMTRlOGNiMDhiNDc0MGUwNDBiOGIwYjZmMDI1ZTU2MzY5OTJlNDFjMWI4Y2JmODFiNGFlODgxNmY2YyJ9fX0=
+savanna_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGZjNDU2ZTM5NGQ1Y2YwMGMzZjUzYWVhMWEyNTg1MDg3OTgxN2IyODY4ZTI4YmU0MmYyMjA4ODRjOGNlOTNhMSJ9fX0=
+snow_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY4NDE1Y2NkN2YwYTM3YTZjZGE1YTE0YWY3NWNjNzIyZTNmNzY2NzlmZGZkYjM3M2IzYjkxM2EzZDYxMjQ2MSJ9fX0=
+swamp_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGJiYjdiNzFmYzE2MjM4MDRhY2U3NjlmZjQ2ZDFmYzJhODFmNDEzZDEwNWIzOWI0ZTQ0NDdmOTRkNzU2NGYxMiJ9fX0=
+taiga_fletcher_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYzZmIyMzNiZDNlZWVjZjViODllMzg0MmZjY2EwYmZjNDMxZjVmZTgxNjJmM2M4OTczZGVkZTEwYzYyZWU3YSJ9fX0=
+plains_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFmZTMwMGZkZTQwMDg4NWUwODhiMzY5Nzk1OGQ5ZGI4NjE2MTgyODkzMDdhNTYzMTY4OTM3MmY5OWNlZmI4NiJ9fX0=
+desert_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGViMmVkOTdjODZhZDAwZTI3NTJmNWU2NmRiNjRiNWIyZjBjNmM4ZGE1MzQ0Yjg2MDg3NDdmNzI0YzRjN2E0ZSJ9fX0=
+jungle_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTU0ZGExM2E1NjAwNTI0N2IwZDhiNzhlYTVkMTRmYTI0OGQ5NmU1N2MwYmY0MzMzNTljYTAyYmM5YjVjN2E5MiJ9fX0=
+savanna_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzIxNjg5ZTM5M2YxODgzNDhmZmU1YmM4ZDE5OTY4NjEwZTRjYjcxMWNjODU1N2E5MTY4ZDRkZjgyYmNiZDk0YyJ9fX0=
+snow_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI3YmY3MWQ1Yzg0MjdmNzEzMGYyNTM0Njg3N2VhNDk3MGFlNDBiNWI0MTg5YWI4YTYyZWI0ZmFhYTQ2YTU1YiJ9fX0=
+swamp_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDYzZjRjMjViZTQ0MDE0MTk4YjEyM2I3NmQ2Y2ZhMTA5ZGZiYWNiOWY3YWIxYzcwYzYwOGM2NmE2ZGZkN2QzMiJ9fX0=
+taiga_leatherworker_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjNjNjk4YTYwZTdiOTNiNWQ1NjFhZDg5ZjQ4OTlmYjExOTYwNjRkNjk0NWQ3OTZkN2M3MzRjYThkYmNmMmQyMiJ9fX0=
+plains_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjczYWYwM2M1ODZmYTgyZjhhYWM3MmVkMjkxMmZlNjM5NWVlYWEwN2VhYTUwYmQ0ZjJiOTg0MGI0NDQ4MzBmMiJ9fX0=
+desert_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTllMWNmOTI1YjczYmQ1ZTE0YTk5N2I4NWU0ZGI2ZmM3NmE2MTljMGRiN2JiNjM2ZTM0YTVhY2UyODViZDBhZSJ9fX0=
+jungle_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA2NTNmZDgzYjU3MzM2MzU2ZmEzNDgxZDEzMWFkMDUxMmViZWM1YjZkNTI4ZDE2NmM1ZDM5MGQzNGYzNzBiMSJ9fX0=
+savanna_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTEzYjllZjkxNDMwYjUwNmM0ODNhOWEzOWVkMjQyMDA4NDQ3Y2UxMDJkZjc2NTZjNjJlNmRkZTg0MzNmNzI2MSJ9fX0=
+snow_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU4NTk3NWY5ZDA3YmYzMjY1NDY3MDg5MDU0ZmY2Mzc0ZDU3OWIxNmFhYzQxMTE0MTdhMWU5MWY2YzA2YWYwZiJ9fX0=
+swamp_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzJmZDE0NjcwMTJkMDY4YmJmZDc4MjVhODg2MTFjYzM0MWYwOGZjMWExYmRmYzY4NTgxN2I4ZGU0Y2RhOTc2ZCJ9fX0=
+taiga_librarian_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTEwZDc4MTA1NDVhYzIyNjVhZTkyOGJjMjlhYmJlOWRmNjgyMTAwOTVhNmEyNzUwZTAzODliNzViOWQwMTAwZCJ9fX0=
+plains_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ2ZDRmNTE5OGIxMjkyODg3NDM2ZjJjNmYzYWI1NTgzMzEzZTQxZTE2NDdhZjBmMmYzNDEyMTk2YzczOTVmNSJ9fX0=
+desert_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTBmMTBhOTQ1ZDUyMTViYmJkODBiZDA3YjliZTFmMDQ1M2FhOGU4YmE1NjQwMzU2NDc0MzM0MGVkNzAyM2E5ZSJ9fX0=
+jungle_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkOGNkYTBlMjY4YmIxOTgyZjk2NWQ3ZDVmZjJiNTkwNmQ2YzIzOTg4ZjQ5NDMyNDE4NDNjODIxZjdhZGYwNSJ9fX0=
+savanna_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjU3YTJlMzRjMGE5ZjI2MTc1NGFjMzkzOWQ5NGZlMGI2OTIzM2QzOWJkOTgwNzNhYzAwYmUwYTYyMTBhZGQ0NSJ9fX0=
+snow_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Y4NWMyNWVkYWRjYzMwYmZkZWMxYmI5NTM2MmMxMGRmNDA3NGU5YTZkZjg5OGU5ZGQwYmYxYzM2MDhhYTZlMCJ9fX0=
+swamp_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODhkMzRmY2M1MTM0ODliY2IxYmFmYzM4YzJjMDM2YjhmZjdiZjJjYTFiNGEyYmI0NWQ4YmJlODI4NjhkMmJjNSJ9fX0=
+taiga_mason_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFhMTNmNzYxMzRjMTUxMjc2YTgyOTIxMDEyZDFmMGI0OWI5NTEwZmNjN2FmN2VjYTliODE0NDJkYWU0NGQ1YSJ9fX0=
+plains_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjMwOGNjYTNkNjk3YTY0ZjYyYjhlMTY5NTE4MmRhZDdjMGUzMGYyM2RkZjgyZjE2ZTFmZWEzZjIxZDZlNzkzMiJ9fX0=
+desert_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjE1ZDM2NjdkMWNiNWE5MjAyMmYwOWQyMDA4ZmZhODQ4ODU3YzU4NjdiZGUxOTU1MmViMTQ3ZjA3ZDZjMjMxYyJ9fX0=
+jungle_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjY1OWNmZGQxMmY3ODUzMWIyYTI5YzIyYTA5YmNlMDQ0OTE2N2JmMDNjZjYyZThlYmI5MTkxNGQ3Yjg1NzU2NiJ9fX0=
+savanna_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ0ZmI4NDNjNGRlMWI3YmY5NzExMTQyNTk5OWJhYjgxODFlMGFmYmE1MmViYzNkMWIzMjA3ZjgxOWEzMjRiZiJ9fX0=
+snow_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODY1MzQwOTI4M2YwYmY0MGZjNDFlN2NiM2UwMzQ5ZTg5MzZhMzJmNTRkYjA0YjhlMjcyZjZjYjQzZjIxNWY5In19fQ==
+swamp_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGE1MmNhNTBhN2M3MDRlYWQ2ZjQyOGMwMmRlZjRlNzAwMDUwNmJmYTIzNjA0MTQ0YjgyM2M4NzI5MDA2ZjQ4NSJ9fX0=
+taiga_shepherd_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJmOWI0NzVhMGU3NTAwNTYxNGExOTZkNTRiZTdkNjVhNzA2YzZjNjA1ZWI5M2EzODg2NGU1MTE2YzgxYWY5NCJ9fX0=
+plains_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI5NWI0NjJmNmQxYTBkMGZiOTg0ZjcwMTBlZDc0MGUzMjgyZWM2ZmM1OWRjN2VlOTdiOGMxYmRhYTY4MGEyYyJ9fX0=
+desert_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThmNjIwNWFlMzMwYzYzODc0ZTk0ZWI5ZmY1OTI3M2ZhYzEzNWQyZThkMGRlNjIwZTgzYzEyMjFmZTU0YjEwMSJ9fX0=
+jungle_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTdmMTFjMjg0YTAyODUyYmNlM2YxZDMwYTU2ZGIyZDc0NmM5YzQ4NDY5MzNmNTg0ZTYzOWQ0MTAzMDE3ZmZkNSJ9fX0=
+savanna_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFmMTFkYTQ0OTU5ZGJlNmZiMzFhNmViMzgxNzEyNDgyNmQyZmJkMGUxMzk5NjVkNWFkMzZjOTA3YzhkZGExYyJ9fX0=
+snow_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjVkOGU3ZjZkMjVmZmIzY2U3MDM4YTRhMDVjZjQ2YzgzMmFmOTExYjQwZDA1NjMwYzc3MDZhMjQzNDU2OWE5NCJ9fX0=
+swamp_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTY3YWVmYjdmYWZiYzcwZjhhYjZkOGIwNTdmZWJhZDg3YWE2MzVmNDllNzhiOTY0NWY5ZmM5MjAyNjg2MzkzZCJ9fX0=
+taiga_toolsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWIwYTFhYjZkMGU5ODgwNTlkMTk5Y2FjNjEyNjhlNmQ5YjBmMzQwOTE0YmM0MzY0ZjUzZDA3OGM2MTI5NTIxYyJ9fX0=
+plains_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY1N2NlODUxNmQ1YzhlYjhkYjg1Mjg4MTU1ODliYjRmODg2Y2YzMDMyOGQyZGYxMzQ5MzJmYjIxMWJlZTNlNyJ9fX0=
+desert_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzBiY2ZjYWVjYWNlOTIwYTEwYmNhN2Y5YmJjZmJmZWFiNmIxNTI5MjQzNjI3NmNiY2ExNjJiZWQ1YTIzN2I3NiJ9fX0=
+jungle_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk0YTk3ZjBkZWQzNWQxMDllYWJhMGIyNjU1NTYxMTE1MjVjOTdhOGEyNDI1NTMzODM3ZGYyMDc0OGYwZGY1OCJ9fX0=
+savanna_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ4MjViYzQxZTQ2NDFjMzQyYjVjYTFiMzQ3YTk3MTEzMmIxZGJhM2NhMWMyMWJhZTI3MzI3NjA1YmIwZTdmYSJ9fX0=
+snow_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk4OWVlN2YwZWUxNmFjY2NkYzhlM2EwZmU4MWI3ZjUzMmY4ZjY5ODQ0ZjE5M2RjNmUxYWNmYTAyZDJlZmMyNyJ9fX0=
+swamp_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk3M2YyN2QyYmJkNjhjYjg0OGU4Y2UxNjI1ZTRkNDg0NzQzYTMyNTVjZjI3YTFhYjFmNmNjOTExOGYzODkwNSJ9fX0=
+taiga_weaponsmith_zombie_villager_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2YxMmQ2ZTczNzBiMTNkYWVjMjcwNTBlNzBjMjMyNjJkZWY3YzBiM2E2MDYwYjNkOTRlZTQ3ODQ0MmE1NjY5NCJ9fX0=

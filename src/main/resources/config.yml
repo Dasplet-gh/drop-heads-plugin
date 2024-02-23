@@ -177,6 +177,7 @@ cow_head_name: коровы
 chicken_head_name: курицы
 ghast_head_name: гаста
 slime_head_name: слизня
+zombie_pigman_head_name: зомби-свиночеловека
 squid_head_name: спрута
 # Волки - 17
 white_tamed_wolf_head_name: прирученного волка c белым ошейником
@@ -259,12 +260,12 @@ dark_brown_black_dots_horse_head_name: темно-гнедой лошади с �
 # -----------
 skeleton_horse_head_name: лошади-скелета
 zombie_horse_head_name: лошади-зомби
-donkey_head_name: ося
+donkey_head_name: осла
 mule_head_name: мула
 enderman_head_name: эндермена
 endermite_head_name: эндермита
 # Кролики - 8
-toast_rabbit_head_name: toast кролика
+toast_rabbit_head_name: кролика toast
 brown_rabbit_head_name: коричневого кролика
 white_rabbit_head_name: белого кролика
 black_rabbit_head_name: чёрного кролика
@@ -355,7 +356,7 @@ cold_frog_head_name: снежной лягушки
 temperate_frog_head_name: лягушки из умеренного климата
 warm_frog_head_name: тропической лягушки
 allay_head_name: тихони
-warden_frog_head_name: хранителя
+warden_head_name: хранителя
 camel_head_name: верблюда
 sniffer_head_name: нюхача
 
@@ -613,6 +614,7 @@ cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW
 chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ==
 ghast_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19
 slime_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UwY2ZmZDRkMzIwNjA2YmNkZGFlNmU5OWRlNWMyNGU1NzQzOGM3OTFkN2QzZmNhMjc1MTRlNDU4MjI5N2VhOCJ9fX0=
+zombie_pigman_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVmYjJkZjc1NGM5OGI3NDJkMzVlN2I4MWExZWVhYzlkMzdjNjlmYzhjZmVjZDNlOTFjNjc5ODM1MTZmIn19fQ==
 squid_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRmZTgzMmE4NGViYTI3ODQ0NDkxN2FkNjFjZDFiZGUxNWRiYjM3NDIxMzE2MzZmNmEyOTcwODI5YzBiMDVjYiJ9fX0=
 # Волки - 17
 white_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkNTFlYWMzOWVhOGJiNWYzMjdiNTljM2IxMjZjNTA2ZTQxZjdlNzA1YWViMmExOTc2ZjFhYmNjZThjN2QzNCJ9fX0=
@@ -654,7 +656,7 @@ jellie_cat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJ
 all_black_cat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJjMWU4MWZmMDNlODJhM2U3MWUwY2Q1ZmJlYzYwN2UxMTM2MTA4OWFhNDdmMjkwZDQ2YzhhMmMwNzQ2MGQ5MiJ9fX0=
 # ----------
 iron_golem_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODkwOTFkNzllYTBmNTllZjdlZjk0ZDdiYmE2ZTVmMTdmMmY3ZDQ1NzJjNDRmOTBmNzZjNDgxOWE3MTQifX19
-bat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU5OWRlZWY5MTlkYjY2YWMyYmQyOGQ2MzAyNzU2Y2NkNTdjN2Y4YjEyYjlkY2E4ZjQxYzNlMGEwNGFjMWNjIn19fQ==
+bat_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRlNzVhMmNjMWM5NTBlODJmNjJhYmUyMGQ0Mjc1NDM3OWRmYWQ2ZjVmZjU0NmU1OGYxYzA5MDYxODYyYmI5MiJ9fX0=
 witch_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIwOGVlZWRmNDVkZTZhNDYyMzMxN2RmNzQyN2E5YjVmYWYxM2EyMzIzMDhlM2M5M2VkYWYzMGJjNTAwODBkNSJ9fX0=
 # Лошади - 35
 white_none_horse_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWNkOGMyNGEzZmQ5MGJjYWU2OWZhMWZhZTA4YmExNmMzN2Y0MmNhZGE3MWQ0NGVkZTJjNjRlMDBjOTE1NzZkOSJ9fX0=
@@ -791,6 +793,7 @@ cold_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJl
 temperate_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYzZTI5ZGQ5NDdhMTc3ODk1ZjYxMjFkMjMzMWI2NWFjM2Y4OTZmZGE0YmRkMTE1MTQ5MWU0MGI4MDQ5NTJhNyJ9fX0=
 warm_frog_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU5MzEyYjViMmJhYjlhZDUxZWE0YjZhNDA3ZDZkMzkwYmI1MDQzNDA4NzU3Yjk3NmE3NTU2ODk4YWM0M2RlMCJ9fX0=
 allay_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTUwMjk0YTE3NDczMTBmMTA0MTI0YzYzNzNjYzYzOWI3MTJiYWE1N2I3ZDkyNjI5N2I2NDUxODhiN2JiOWFiOSJ9fX0=
+warden_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZmNzQzNjFmYjAwNDkwYTBhOThlZWI4MTQ1NDRlY2RkNzc1Y2I1NTYzM2RiYjExNGU2MGQyNzAwNGNiMTAyMCJ9fX0=
 camel_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmE0Yzk1YmZhMGI2MTcyMjI1NTM4OTE0MWI1MDVjZjFhMzhiYWQ5YjBlZjU0M2RlNjE5ZjBjYzkyMjFlZDk3NCJ9fX0=
 sniffer_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU1YTgzNDFjNDc4YTEzNDMwMjk4MWU2YTc3NThlYTRlY2ZkOGQ2MmEwZGY0MDY3ODk3ZTc1NTAyZjliMjVkZSJ9fX0=
 
