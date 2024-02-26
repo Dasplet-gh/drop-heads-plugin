@@ -22,7 +22,7 @@ player_head_drop_chance: 0.05
 
 # Боссы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-ender_dragon_head_drop_chance: 0.05
+ender_dragon_head_drop_chance: 0.04
 wither_head_drop_chance: 0.04
 
 # Мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -30,12 +30,12 @@ wither_head_drop_chance: 0.04
 # Classic
 pig_head_drop_chance: 0.006
 sheep_head_drop_chance: 0.006
-jeb_sheep_head_drop_chance: 0.015
+jeb_sheep_head_drop_chance: 0.01
 spider_head_drop_chance: 0.005
 skeleton_head_drop_chance: 0.0045
 zombie_head_drop_chance: 0.0045
-creeper_head_drop_chance: 0.005
-powered_creeper_head_drop_chance: 0.03
+creeper_head_drop_chance: 0.0045
+powered_creeper_head_drop_chance: 0.02
 # Alpha
 cow_head_drop_chance: 0.0065
 chicken_head_drop_chance: 0.006
@@ -52,35 +52,35 @@ snow_golem_head_drop_chance: 0.007
 snowman_head_drop_chance: 0.008
 blaze_head_drop_chance: 0.006
 magma_cube_head_drop_chance: 0.007
-villager_head_drop_chance: 0.015
+villager_head_drop_chance: 0.01
 # v1.2.1
-ocelot_head_drop_chance: 0.015
+ocelot_head_drop_chance: 0.01
 cat_head_drop_chance: 0.01
 iron_golem_head_drop_chance: 0.008
 # v1.4.2
 bat_head_drop_chance: 0.01
 witch_head_drop_chance: 0.008
-zombie_villager_head_drop_chance: 0.025
+zombie_villager_head_drop_chance: 0.02
 # v1.6.1
 horse_head_drop_chance: 0.0065
 skeleton_horse_head_drop_chance: 0.01
-zombie_horse_head_drop_chance: 0.05
+zombie_horse_head_drop_chance: 0.04
 donkey_head_drop_chance: 0.0075
 mule_head_drop_chance: 0.009
 # v1.8
-enderman_head_drop_chance: 0.005
+enderman_head_drop_chance: 0.0045
 endermite_head_drop_chance: 0.015
 rabbit_head_drop_chance: 0.007
 toast_rabbit_head_drop_chance: 0.015
 killer_bunny_head_drop_chance: 0.05
 cave_spider_head_drop_chance: 0.006
 guardian_head_drop_chance: 0.007
-elder_guardian_head_drop_chance: 0.05
+elder_guardian_head_drop_chance: 0.03
 silverfish_head_drop_chance: 0.007
 # v1.9
 shulker_head_drop_chance: 0.007
 # v1.10
-polar_bear_head_drop_chance: 0.015
+polar_bear_head_drop_chance: 0.01
 husk_head_drop_chance: 0.0075
 stray_head_drop_chance: 0.0075
 # v1.11
@@ -101,12 +101,12 @@ drowned_head_drop_chance: 0.006
 phantom_head_drop_chance: 0.006
 # v1.14
 fox_head_drop_chance: 0.008
-wandering_trader_head_drop_chance: 0.025
+wandering_trader_head_drop_chance: 0.02
 trader_llama_head_drop_chance: 0.002
 panda_head_drop_chance: 0.008
 brown_panda_head_drop_chance: 0.08
 pillager_head_drop_chance: 0.006
-ravager_head_drop_chance: 0.025
+ravager_head_drop_chance: 0.02
 # v1.15
 bee_head_drop_chance: 0.007
 pollinated_bee_head_drop_chance: 0.0085
@@ -114,7 +114,7 @@ pollinated_bee_head_drop_chance: 0.0085
 strider_head_drop_chance: 0.009
 zombified_piglin_head_drop_chance: 0.0045
 hoglin_head_drop_chance: 0.008
-zoglin_head_drop_chance: 0.015
+zoglin_head_drop_chance: 0.025
 piglin_head_drop_chance: 0.0065
 # v1.16.2
 piglin_brute_head_drop_chance: 0.0085
@@ -125,19 +125,19 @@ blue_axolotl_head_drop_chance: 0.15
 goat_head_drop_chance: 0.007
 goat_left_head_drop_chance: 0.01
 goat_right_head_drop_chance: 0.01
-goat_none_head_drop_chance: 0.025
+goat_none_head_drop_chance: 0.02
 screaming_goat_head_drop_chance: 0.07
 screaming_goat_left_head_drop_chance: 0.1
 screaming_goat_right_head_drop_chance: 0.1
-screaming_goat_none_head_drop_chance: 0.25
+screaming_goat_none_head_drop_chance: 0.2
 # v1.19
 tadpole_head_drop_chance: 0.075
 frog_head_drop_chance: 0.0075
-allay_head_drop_chance: 0.04
+allay_head_drop_chance: 0.03
 warden_head_drop_chance: 0.025
 # v1.20
 camel_head_drop_chance: 0.009
-sniffer_head_drop_chance: 0.025
+sniffer_head_drop_chance: 0.02
 
 # ИМЕНА ГОЛОВ \========================================================================================================\
 
