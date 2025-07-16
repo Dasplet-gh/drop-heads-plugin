@@ -48,7 +48,7 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
                              String[] args) {
         // Проверка, является ли отправитель игроком
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player player)) {
             sender.sendMessage(Objects.requireNonNull(config.getString("message_not_player")));
             return true;
         }
@@ -65,13 +65,12 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
                 sender.sendMessage(Objects.requireNonNull(config.getString("message_gethead_usage")));
                 return true;
             }
-            // Получение текстуры головы что бы проверить её наличие
+            // Получение текстуры головы, что бы проверить её наличие
             if (config.getString(args[0] + MobDeathListener.TagSuffixHeadTexture) == null) {
                 sender.sendMessage(Objects.requireNonNull(config.getString("message_gethead_missing_head")));
                 return true;
             }
             // Выдача головы
-            Player player = (Player) sender;
             player.getInventory().addItem(MobDeathListener.CreateHeadItem(Objects.requireNonNull(
                             DropHeadsPlugin.config.getString(args[0] + MobDeathListener.TagSuffixHeadTexture)),
                     DropHeadsPlugin.config.getString(args[0] + MobDeathListener.TagSuffixHeadName)));
@@ -138,12 +137,11 @@ class MobDeathListener implements Listener {
         // Если нет убийцы, то голова не выпадает
         if (killer == null) { return false; }
         // Если убитый моб это ребёнок, то голова не выпадает
-        if (event.getEntity() instanceof Ageable) {
-            Ageable ageable = (Ageable) event.getEntity();
+        if (event.getEntity() instanceof Ageable ageable) {
             if (!ageable.isAdult()) { return false; }
         }
         // Получение уровня добычи у оружия убийцы
-        int loot_level = killer.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_MOBS);
+        int loot_level = killer.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOTING);
         // Шанс выпадения головы
         double original_drop_chance = DropHeadsPlugin.config.getDouble(drop_chance_tag + TagSuffixHeadDropChance);
         double drop_chance = original_drop_chance +
@@ -171,9 +169,8 @@ class MobDeathListener implements Listener {
     public void onEntityDeath(EntityDeathEvent event) {
         // Игрок -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-        if (event.getEntity() instanceof Player) {
+        if (event.getEntity() instanceof Player killed_player) {
             // Получение убитого и убийцы
-            Player killed_player = (Player) event.getEntity();
             Player killer = killed_player.getKiller();
             // Если есть убийца и выпал шанс, то голова дропается
             if (killer != null &&
@@ -386,7 +383,7 @@ class MobDeathListener implements Listener {
                 }
                 break;
 
-            case MUSHROOM_COW: // Грибная корова - 2
+            case MOOSHROOM: // Грибная корова - 2
                 MushroomCow mushroom_cow = (MushroomCow) event.getEntity();
                 MushroomCow.Variant mushroom_cow_variant = mushroom_cow.getVariant();
 
@@ -402,7 +399,7 @@ class MobDeathListener implements Listener {
                 }
                 break;
 
-            case SNOWMAN: // Снежный голем - 2
+            case SNOW_GOLEM: // Снежный голем - 2
                 Snowman snowman = (Snowman) event.getEntity();
 
                 if (snowman.isDerp()) {
@@ -438,43 +435,30 @@ class MobDeathListener implements Listener {
                 Cat cat = (Cat) event.getEntity();
                 Cat.Type cat_type = cat.getCatType();
 
-                switch (cat_type) {
-                    case TABBY:
-                        DropMobHead(event, "cat", "tabby_cat");
-                        break;
-                    case BLACK:
-                        DropMobHead(event, "cat", "black_cat");
-                        break;
-                    case RED:
-                        DropMobHead(event, "cat", "red_cat");
-                        break;
-                    case SIAMESE:
-                        DropMobHead(event, "cat", "siamese_cat");
-                        break;
-                    case BRITISH_SHORTHAIR:
-                        DropMobHead(event, "cat", "british_shorthair_cat");
-                        break;
-                    case CALICO:
-                        DropMobHead(event, "cat", "calico_cat");
-                        break;
-                    case PERSIAN:
-                        DropMobHead(event, "cat", "persian_cat");
-                        break;
-                    case RAGDOLL:
-                        DropMobHead(event, "cat", "ragdoll_cat");
-                        break;
-                    case WHITE:
-                        DropMobHead(event, "cat", "white_cat");
-                        break;
-                    case JELLIE:
-                        DropMobHead(event, "cat", "jellie_cat");
-                        break;
-                    case ALL_BLACK:
-                        DropMobHead(event, "cat", "all_black_cat");
-                        break;
-                    default:
-                        break;
+                if (cat_type == Cat.Type.TABBY) {
+                    DropMobHead(event, "cat", "tabby_cat");
+                } else if (cat_type == Cat.Type.BLACK) {
+                    DropMobHead(event, "cat", "black_cat");
+                } else if (cat_type == Cat.Type.RED) {
+                    DropMobHead(event, "cat", "red_cat");
+                } else if (cat_type == Cat.Type.SIAMESE) {
+                    DropMobHead(event, "cat", "siamese_cat");
+                } else if (cat_type == Cat.Type.BRITISH_SHORTHAIR) {
+                    DropMobHead(event, "cat", "british_shorthair_cat");
+                } else if (cat_type == Cat.Type.CALICO) {
+                    DropMobHead(event, "cat", "calico_cat");
+                } else if (cat_type == Cat.Type.PERSIAN) {
+                    DropMobHead(event, "cat", "persian_cat");
+                } else if (cat_type == Cat.Type.RAGDOLL) {
+                    DropMobHead(event, "cat", "ragdoll_cat");
+                } else if (cat_type == Cat.Type.WHITE) {
+                    DropMobHead(event, "cat", "white_cat");
+                } else if (cat_type == Cat.Type.JELLIE) {
+                    DropMobHead(event, "cat", "jellie_cat");
+                } else if (cat_type == Cat.Type.ALL_BLACK) {
+                    DropMobHead(event, "cat", "all_black_cat");
                 }
+
                 break;
 
             case IRON_GOLEM: // Железный голем
@@ -866,19 +850,14 @@ class MobDeathListener implements Listener {
                 Frog frog = (Frog) event.getEntity();
                 Frog.Variant frog_variant = frog.getVariant();
 
-                switch (frog_variant) {
-                    case COLD:
-                        DropMobHead(event, "frog", "cold_frog");
-                        break;
-                    case TEMPERATE:
-                        DropMobHead(event, "frog", "temperate_frog");
-                        break;
-                    case WARM:
-                        DropMobHead(event, "frog", "warm_frog");
-                        break;
-                    default:
-                        break;
+                if (frog_variant == Frog.Variant.COLD) {
+                    DropMobHead(event, "frog", "cold_frog");
+                } else if (frog_variant == Frog.Variant.TEMPERATE) {
+                    DropMobHead(event, "frog", "temperate_frog");
+                } else if (frog_variant == Frog.Variant.WARM) {
+                    DropMobHead(event, "frog", "warm_frog");
                 }
+
                 break;
 
             case ALLAY: // Тихоня
@@ -988,82 +967,54 @@ class MobDeathListener implements Listener {
             Villager.Type villager_type, Villager.Profession villager_profession, String villager_tag) {
         String texture_tag = "";
 
-        switch (villager_type) {
-            case PLAINS:
-                texture_tag += "plains";
-                break;
-            case DESERT:
-                texture_tag += "desert";
-                break;
-            case JUNGLE:
-                texture_tag += "jungle";
-                break;
-            case SAVANNA:
-                texture_tag += "savanna";
-                break;
-            case SNOW:
-                texture_tag += "snow";
-                break;
-            case SWAMP:
-                texture_tag += "swamp";
-                break;
-            case TAIGA:
-                texture_tag += "taiga";
-                break;
-            default:
-                break;
+        if (villager_type == Villager.Type.PLAINS) {
+            texture_tag += "plains";
+        } else if (villager_type == Villager.Type.DESERT) {
+            texture_tag += "desert";
+        } else if (villager_type == Villager.Type.JUNGLE) {
+            texture_tag += "jungle";
+        } else if (villager_type == Villager.Type.SAVANNA) {
+            texture_tag += "savanna";
+        } else if (villager_type == Villager.Type.SNOW) {
+            texture_tag += "snow";
+        } else if (villager_type == Villager.Type.SWAMP) {
+            texture_tag += "swamp";
+        } else if (villager_type == Villager.Type.TAIGA) {
+            texture_tag += "taiga";
         }
 
         texture_tag += "_";
 
-        switch (villager_profession) {
-            case NONE:
-                texture_tag += "none";
-                break;
-            case NITWIT:
-                texture_tag += "nitwit";
-                break;
-            case ARMORER:
-                texture_tag += "armorer";
-                break;
-            case BUTCHER:
-                texture_tag += "butcher";
-                break;
-            case CARTOGRAPHER:
-                texture_tag += "cartographer";
-                break;
-            case CLERIC:
-                texture_tag += "cleric";
-                break;
-            case FARMER:
-                texture_tag += "farmer";
-                break;
-            case FISHERMAN:
-                texture_tag += "fisherman";
-                break;
-            case FLETCHER:
-                texture_tag += "fletcher";
-                break;
-            case LEATHERWORKER:
-                texture_tag += "leatherworker";
-                break;
-            case LIBRARIAN:
-                texture_tag += "librarian";
-                break;
-            case MASON:
-                texture_tag += "mason";
-                break;
-            case SHEPHERD:
-                texture_tag += "shepherd";
-                break;
-            case TOOLSMITH:
-                texture_tag += "toolsmith";
-                break;
-            case WEAPONSMITH:
-                texture_tag += "weaponsmith";
-                break;
-            default:
-                break;
+        if (villager_profession == Villager.Profession.NONE) {
+            texture_tag += "none";
+        } else if (villager_profession == Villager.Profession.NITWIT) {
+            texture_tag += "nitwit";
+        } else if (villager_profession == Villager.Profession.ARMORER) {
+            texture_tag += "armorer";
+        } else if (villager_profession == Villager.Profession.BUTCHER) {
+            texture_tag += "butcher";
+        } else if (villager_profession == Villager.Profession.CARTOGRAPHER) {
+            texture_tag += "cartographer";
+        } else if (villager_profession == Villager.Profession.CLERIC) {
+            texture_tag += "cleric";
+        } else if (villager_profession == Villager.Profession.FARMER) {
+            texture_tag += "farmer";
+        } else if (villager_profession == Villager.Profession.FISHERMAN) {
+            texture_tag += "fisherman";
+        } else if (villager_profession == Villager.Profession.FLETCHER) {
+            texture_tag += "fletcher";
+        } else if (villager_profession == Villager.Profession.LEATHERWORKER) {
+            texture_tag += "leatherworker";
+        } else if (villager_profession == Villager.Profession.LIBRARIAN) {
+            texture_tag += "librarian";
+        } else if (villager_profession == Villager.Profession.MASON) {
+            texture_tag += "mason";
+        } else if (villager_profession == Villager.Profession.SHEPHERD) {
+            texture_tag += "shepherd";
+        } else if (villager_profession == Villager.Profession.TOOLSMITH) {
+            texture_tag += "toolsmith";
+        } else if (villager_profession == Villager.Profession.WEAPONSMITH) {
+            texture_tag += "weaponsmith";
         }
 
         texture_tag += "_";
