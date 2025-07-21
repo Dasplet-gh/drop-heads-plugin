@@ -1,8 +1,9 @@
 package me.matejpacan.dropheads;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 
+import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -19,9 +20,12 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
 
-import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Field;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.Random;
@@ -40,11 +44,6 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
     }
 
     @Override
-    public void onDisable() {
-        getLogger().info(config.getString("message_on_disable"));
-    }
-
-    @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label,
                              String[] args) {
         // Проверка, является ли отправитель игроком
@@ -58,7 +57,7 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
             return true;
         }
 
-        // Проверка имени команды
+        // Команда gethead
         if (command.getName().equalsIgnoreCase("gethead")) {
             // Проверяем, был ли передан хотя бы один аргумент
             if (args.length == 0) {
@@ -88,10 +87,11 @@ class MobDeathListener implements Listener {
     static final String TagSuffixHeadName = "_head_name";
     static final String TagSuffixHeadTexture = "_head_texture";
 
+    static final String TagPrefixHeadUUIDHash = "drop_heads_";
+
     static final String ItemCodePrefix = "minecraft:";
 
     static final String NameTextures = "textures";
-    static final String NameProfile = "profile";
 
     public static void TriumphOfDropHead(Player player, String head_name) {
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.7f, 1.0f);
@@ -114,17 +114,16 @@ class MobDeathListener implements Listener {
         // Объект голова и мета данные головы
         ItemStack head = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) head.getItemMeta();
-        // Создание профиля мета данных для головы
-        GameProfile profile = new GameProfile(UUID.nameUUIDFromBytes(texture_code.getBytes()), head_name);
-        profile.getProperties().put(NameTextures, new Property(NameTextures, texture_code));
-        // Запись текстуры головы в мета данные
-        try {
-            Field profileField = meta.getClass().getDeclaredField(NameProfile);
-            profileField.setAccessible(true);
-            profileField.set(meta, profile);
-        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ex) {
-            ex.printStackTrace();
-        }
+        // Создание уникального uuid для типа головы и профиля мета данных для головы
+        UUID uuid = UUID.nameUUIDFromBytes((TagPrefixHeadUUIDHash + texture_code).getBytes());
+        PlayerProfile profile = Bukkit.createProfile(uuid, null);
+        profile.setProperty(new ProfileProperty(NameTextures, texture_code));
+        // Запись текстуры и названия головы в мета данные
+        meta.setPlayerProfile(profile);
+        meta.displayName(Component.text(
+                DropHeadsPlugin.config.getString("head_name_starts") + " " + head_name,
+                NamedTextColor.YELLOW
+        ).decoration(TextDecoration.ITALIC, false));
         // Установка мета данных голове
         head.setItemMeta(meta);
         // Возврат головы
@@ -174,7 +173,8 @@ class MobDeathListener implements Listener {
             Player killer = killed_player.getKiller();
             // Если есть убийца и выпал шанс, то голова дропается
             if (killer != null &&
-                    new Random().nextDouble() <= DropHeadsPlugin.config.getDouble("player" + TagSuffixHeadDropChance)) {
+                    new Random().nextDouble() <= DropHeadsPlugin.config.getDouble(
+                            "player" + TagSuffixHeadDropChance)) {
                 // Объект голова и мета данные головы
                 ItemStack head = new ItemStack(Material.PLAYER_HEAD);
                 SkullMeta skull_meta = (SkullMeta) head.getItemMeta();
