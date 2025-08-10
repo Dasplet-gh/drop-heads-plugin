@@ -10,6 +10,8 @@ message_gethead_missing_head: "§6Вы указали не сущещствую�
 
 message_drop_head_title_header: "§6Добыт Трофей"
 message_drop_head_text_prefix: "§l§8Голова"
+message_rare_drop_head_title_header: "§5⏴ Добыт Редкий Трофей ⏵"
+message_rare_drop_head_text_prefix: "§l§8Голова"
 
 # ВЕРОЯТНОСТИ \========================================================================================================\
 
@@ -23,6 +25,7 @@ player_head_drop_chance: 0.05
 
 ender_dragon_head_drop_chance: 0.04
 wither_head_drop_chance: 0.04
+rare_wither_head_drop_chance: 0.001
 
 # Мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -34,23 +37,21 @@ spider_head_drop_chance: 0.005
 skeleton_head_drop_chance: 0.0045
 zombie_head_drop_chance: 0.0045
 creeper_head_drop_chance: 0.0045
-powered_creeper_head_drop_chance: 0.02
+powered_creeper_head_drop_chance: 0.03
 # Alpha
-cow_head_drop_chance: 0.0065
+cow_head_drop_chance: 0.006
 chicken_head_drop_chance: 0.006
-ghast_head_drop_chance: 0.008
-slime_head_drop_chance: 0.006
+ghast_head_drop_chance: 0.009
+slime_head_drop_chance: 0.005
 # Beta
 squid_head_drop_chance: 0.0075
-wolf_head_drop_chance: 0.008
-tamed_wolf_head_drop_chance: 0.0065
 # v1.0.0
-red_mooshroom_head_drop_chance: 0.007
-brown_mooshroom_head_drop_chance: 0.008
+red_mooshroom_head_drop_chance: 0.008
+brown_mooshroom_head_drop_chance: 0.012
 snow_golem_head_drop_chance: 0.007
 snowman_head_drop_chance: 0.008
 blaze_head_drop_chance: 0.006
-magma_cube_head_drop_chance: 0.007
+magma_cube_head_drop_chance: 0.006
 villager_head_drop_chance: 0.01
 # v1.2.1
 ocelot_head_drop_chance: 0.01
@@ -79,7 +80,7 @@ silverfish_head_drop_chance: 0.007
 # v1.9
 shulker_head_drop_chance: 0.007
 # v1.10
-polar_bear_head_drop_chance: 0.01
+polar_bear_head_drop_chance: 0.009
 husk_head_drop_chance: 0.0075
 stray_head_drop_chance: 0.0075
 # v1.11
@@ -101,7 +102,7 @@ phantom_head_drop_chance: 0.006
 # v1.14
 fox_head_drop_chance: 0.008
 wandering_trader_head_drop_chance: 0.02
-trader_llama_head_drop_chance: 0.002
+trader_llama_head_drop_chance: 0.01
 panda_head_drop_chance: 0.008
 brown_panda_head_drop_chance: 0.08
 pillager_head_drop_chance: 0.006
@@ -113,30 +114,48 @@ pollinated_bee_head_drop_chance: 0.0085
 strider_head_drop_chance: 0.009
 zombified_piglin_head_drop_chance: 0.0045
 hoglin_head_drop_chance: 0.008
-zoglin_head_drop_chance: 0.025
+zoglin_head_drop_chance: 0.02
 piglin_head_drop_chance: 0.0065
 # v1.16.2
-piglin_brute_head_drop_chance: 0.0085
+piglin_brute_head_drop_chance: 0.009
 # v1.17
 glow_squid_head_drop_chance: 0.009
 axolotl_head_drop_chance: 0.009
-blue_axolotl_head_drop_chance: 0.15
+blue_axolotl_head_drop_chance: 0.12
 goat_head_drop_chance: 0.007
 goat_left_head_drop_chance: 0.01
 goat_right_head_drop_chance: 0.01
 goat_none_head_drop_chance: 0.02
-screaming_goat_head_drop_chance: 0.07
-screaming_goat_left_head_drop_chance: 0.1
-screaming_goat_right_head_drop_chance: 0.1
-screaming_goat_none_head_drop_chance: 0.2
+screaming_goat_head_drop_chance: 0.06
+screaming_goat_left_head_drop_chance: 0.08
+screaming_goat_right_head_drop_chance: 0.08
+screaming_goat_none_head_drop_chance: 0.12
 # v1.19
-tadpole_head_drop_chance: 0.075
+tadpole_head_drop_chance: 0.009
 frog_head_drop_chance: 0.0075
-allay_head_drop_chance: 0.03
-warden_head_drop_chance: 0.025
+allay_head_drop_chance: 0.015
+warden_head_drop_chance: 0.04
 # v1.20
 camel_head_drop_chance: 0.009
-sniffer_head_drop_chance: 0.02
+sniffer_head_drop_chance: 0.018
+# v1.20.5
+armadillo_head_drop_chance: 0.008
+# Волки - 9 видов
+pale_wolf_head_drop_chance: 0.007
+chestnut_wolf_head_drop_chance: 0.0075
+woods_wolf_head_drop_chance: 0.007
+ashen_wolf_head_drop_chance: 0.007
+striped_wolf_head_drop_chance: 0.006
+spotted_wolf_head_drop_chance: 0.006
+rusty_wolf_head_drop_chance: 0.0075
+snowy_wolf_head_drop_chance: 0.01
+black_wolf_head_drop_chance: 0.0075
+# v1.21
+breeze_head_drop_chance: 0.01
+bogged_head_drop_chance: 0.0075
+# v1.21.6
+happy_ghast_head_drop_chance: 0.02
+ghastling_head_drop_chance: 0.015
 
 # ИМЕНА ГОЛОВ \========================================================================================================\
 
@@ -146,10 +165,15 @@ head_name_starts: Голова
 
 ender_dragon_head_name: дракона
 wither_head_name: визера
+rare_wither_head_name: неуязвимого визера
 
 # Мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-pig_head_name: свиньи
+# Свиньи - 3
+temperate_pig_head_name: свиньи
+cold_pig_head_name: снежной свиньи
+warm_pig_head_name: тропической свиньи
+# ----------
 # Овцы - 11
 jeb_sheep_head_name: овцы jeb_
 white_sheep_head_name: белой овцы
@@ -174,31 +198,20 @@ skeleton_head_name: скелета
 zombie_head_name: зомби
 creeper_head_name: крипера
 powered_creeper_head_name: заряженного крипера
-cow_head_name: коровы
-chicken_head_name: курицы
+# Коровы - 3
+temperate_cow_head_name: коровы
+cold_cow_head_name: снежной коровы
+warm_cow_head_name: тропической коровы
+# ----------
+# Курицы - 3
+temperate_chicken_head_name: курицы
+cold_chicken_head_name: снежной курицы
+warm_chicken_head_name: тропической курицы
+# ----------
 ghast_head_name: гаста
 slime_head_name: слизня
 zombie_pigman_head_name: зомби-свиночеловека
 squid_head_name: спрута
-# Волки - 17
-white_tamed_wolf_head_name: прирученного волка c белым ошейником
-orange_tamed_wolf_head_name: прирученного волка c оранжевым ошейником
-magenta_tamed_wolf_head_name: прирученного волка c пурпурным ошейником
-light_blue_tamed_wolf_head_name: прирученного волка c голубым ошейником
-yellow_tamed_wolf_head_name: прирученного волка c жёлтым ошейником
-lime_tamed_wolf_head_name: прирученного волка c лаймовым ошейником
-pink_tamed_wolf_head_name: прирученного волка c розовым ошейником
-gray_tamed_wolf_head_name: прирученного волка c серым ошейником
-light_gray_tamed_wolf_head_name: прирученного волка c светло-серым ошейником
-cyan_tamed_wolf_head_name: прирученного волка c голубым ошейником
-purple_tamed_wolf_head_name: прирученного волка c фиолетовым ошейником
-blue_tamed_wolf_head_name: прирученного волка c синим ошейником
-brown_tamed_wolf_head_name: прирученного волка c коричневым ошейником
-green_tamed_wolf_head_name: прирученного волка c зелёным ошейником
-red_tamed_wolf_head_name: прирученного волка c красным ошейником
-black_tamed_wolf_head_name: прирученного волка c чёрным ошейником
-wolf_head_name: волка
-# ----------
 red_mooshroom_head_name: красной грибной коровы
 brown_mooshroom_head_name: коричневой грибной коровы
 snow_golem_head_name: снежного голема
@@ -222,6 +235,7 @@ all_black_cat_head_name: чёрной кошки
 iron_golem_head_name: железного голема
 bat_head_name: летучей мыши
 witch_head_name: ведьмы
+wither_skeleton_head_name: визер-скелета
 # Лошади - 35
 white_none_horse_head_name: белой лошади
 creamy_none_horse_head_name: буланой лошади
@@ -360,6 +374,22 @@ allay_head_name: тихони
 warden_head_name: хранителя
 camel_head_name: верблюда
 sniffer_head_name: нюхача
+armadillo_head_name: броненосца
+# Волки - 9
+pale_wolf_head_name: бледного волка
+chestnut_wolf_head_name: каштанового волка
+woods_wolf_head_name: лесного волка
+ashen_wolf_head_name: пепельного волка
+striped_wolf_head_name: полосатого волка
+spotted_wolf_head_name: пятнистого волка
+rusty_wolf_head_name: рыжего волка
+snowy_wolf_head_name: снежного волка
+black_wolf_head_name: чёрного волка
+# ----------
+breeze_head_name: вихря
+bogged_head_name: болотника
+happy_ghast_head_name: счастливого гаста
+ghastling_head_name: гастёнка
 
 # Крестьянин -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -582,62 +612,56 @@ taiga_weaponsmith_zombie_villager_head_name: таёжного крестьяни
 # Боссы  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ender_dragon_head_texture: minecraft:dragon_head
-wither_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RmNzRlMzIzZWQ0MTQzNjk2NWY1YzU3ZGRmMjgxNWQ1MzMyZmU5OTllNjhmYmI5ZDZjZjVjOGJkNDEzOWYifX19
+wither_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWUyODBjZWZlOTQ2OTExZWE5MGU4N2RlZDFiM2UxODMzMGM2M2EyM2FmNTEyOWRmY2ZlOWE4ZTE2NjU4ODA0MSJ9fX0=
+rare_wither_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTQzNTE2NGMwNWNlYTI5OWEzZjAxNmJiYmVkMDU3MDZlYmI3MjBkYWM5MTJjZTQzNTFjMjI5NjYyNmFlY2Q5YSJ9fX0=
 
 # Мобы -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-pig_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0=
-# Овцы - 11
+# Свиньи - 3
+temperate_pig_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmVlODUxNDg5MmYzZDc4YTMyZTg0NTZmY2JiOGM2MDgxZTIxYjI0NmQ4MmYzOThiZDk2OWZlYzE5ZDNjMjdiMyJ9fX0=
+cold_pig_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExOGQ0MDQzY2Q2YzkwMzg2Njc4ODkxNGZkNTM0MzE1MjgxYWY5ZjI1OWUzNDgzN2UzZTE3NWU1NDVjMmVkZSJ9fX0=
+warm_pig_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2JlYmExYTJkNTZlODRmOGU1MWZlZDY2NTlmMmNiN2MxNGZlZDQzODU5YWY1ODQ3Mzc4OTdiZjcwYzAzOTQ3NSJ9fX0=
+# ----------
+# Овцы - 17
 jeb_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTQ5YTIwZjE2NDk2NGFhZTU3MWM1OWM5MmM4OGQyNTQ2YjI2OTIzZGM1MWQ0Y2JlNzBhMjg0ODAwM2ZhOGQ4YiJ9fX0=
-white_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjkyZGYyMTZlY2QyNzYyNGFjNzcxYmFjZmJmZTAwNmUxZWQ4NGE3OWU5MjcwYmUwZjg4ZTljODc5MWQxZWNlNCJ9fX0=
-orange_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDI3MTQ0MmQ4YTM3ZGI0OWYwMmE5NGMyOTM1MjY5NDk2MmI1ZDBiZDZiZWEwNWYxZDkzZmUxOWViNGU3MDYwZSJ9fX0=
-magenta_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmUyMjhiMDRlOWI5NzlhMTBiNzBiOGRiNmYzZmIxOTlkZWViNTgxNTk0YTVhYTRhN2ZlYmU5NDhkYjE3MjI4YiJ9fX0=
-light_blue_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzhlYjBkMTc0Nzk4NzBiMzk3M2U4ZTAwMWI4MmRjZGUyMmVmYzlkMTBjOTA0MTJjNjczM2EwYjEzNjU2NGQxZiJ9fX0=
-yellow_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJhNTM1NGMyMzBlODYxYWFjNzI3MzRhNDU4MmQxMzE3MDI2NDU0YjgwN2FjMzUzZmMzYTBiZDBkOGM0MjJiYSJ9fX0=
-lime_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWNlNDA5MGUxYmNjZjk5MmIzNmRlZjc0YTZkN2QzOTcyYzE3ZGIxYjc1NTU0ZTJjNTA5MjcxNjgwYjhlNzk3NCJ9fX0=
-pink_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmU3Y2YxYzU4ZGJiN2MzMjU1Yjk0YzYwNDNmYThmMGQ3NzZjMTM0ZjRkOThiODFjYTMxNDEwOTY1ZjQ3YTI1YSJ9fX0=
-gray_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTZjMmEyNzU1YjIwZGRmZjU1MWE2OTAzZjJkYzdlNjFmMTNlYmUzOWIxZDVjYTkyOWM4N2JkODU4M2VjODAxZiJ9fX0=
-light_gray_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRhNTliZTYyMGFlOGIzZWUwZGQwZmEyMmM4MGFmZmVkNGEwZjcyOTI5NWNiOGM0MWU3OGVlNzgzZjQ2MzNhZCJ9fX0=
-cyan_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjA1NTgzODdiNjY1OGY1ZTlkY2ZmYzcxOTIxNGI2MDNmNjAzYzRiMDRlNzA4YjdhYWJlNzViY2FlOTFlODA0YyJ9fX0=
-purple_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQzY2JkYWUxZjIwYTc5MjgxZDNhNzFhZGYyNDJhMzVjOGNjNTg1NjJiNDE1ZjExMjBiY2E5ZDk0Yjc2ZjI1NCJ9fX0=
-blue_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM5ZWZjNGI0ZWFkZWM0ODU3NmE1NzAwZWM4MTIzOTU1MTAzMjdlNWQxZTdjMTA4ZmQ4YWJjNzc5NjY4NWFhMyJ9fX0=
-brown_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTU4MTM3MTVjMmYzNGYwNTY0OWY4ZmEzZWFhYTY3ZjFlZGE1ZTZmOWNmOTMwZmE5YzJlMDQxMmQxZjk3MjhlMSJ9fX0=
-green_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTc1M2E4ZWMzMmJlOWM1NTBkMWM1NjBhY2I5NDFlZGQ5ZTNiNzNkZGJmMTU4NjkyM2ZiMzdiMjIwYjQ1NTNkZCJ9fX0=
-red_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBjZTViNWNhOTE2NWFjNzdhOWMzZTNmNjRkZjBkMzE3MGQ1YWZjZjlkNWE1NTc1ZTNmMGMwZjIxZTQzYjgzIn19fQ==
-black_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM0YWM1YjM5OGNmN2M4NmUzZjZmMTg4YTUxMjdkOGIyODNkNzcyYmY1ODg1YzcwZTBjMTMwODA1ZjA2OTk1MCJ9fX0=
+white_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjMxZjljY2M2YjNlMzJlY2YxM2I4YTExYWMyOWNkMzNkMThjOTVmYzczZGI4YTY2YzVkNjU3Y2NiOGJlNzAifX19
+orange_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjA5ODM5N2EyNzBiNGMzZDJiMWU1NzRiOGNmZDNjYzRlYTM0MDkwNjZjZWZlMzFlYTk5MzYzM2M5ZDU3NiJ9fX0=
+magenta_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTgzNjU2NWM3ODk3ZDQ5YTcxYmMxODk4NmQxZWE2NTYxMzIxYTBiYmY3MTFkNDFhNTZjZTNiYjJjMjE3ZTdhIn19fQ==
+light_blue_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWE2MjRmNTk2NmJlZGQ2ZTY3ZjY1NGI1OWU5MjQ5YjJlY2YzMDdkOTAzMzM5YmMxOTk5MjM5NzdmNGM4YyJ9fX0=
+yellow_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjZhNDExMmRmMWU0YmNlMmE1ZTI4NDE3ZjNhYWZmNzljZDY2ZTg4NWMzNzI0NTU0MTAyY2VmOGViOCJ9fX0=
+lime_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTJhMjQ0OGY1OGE0OTEzMzI0MzRlODVjNDVkNzg2ZDg3NDM5N2U4MzBhM2E3ODk0ZTZkOTI2OTljNDJiMzAifX19
+pink_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWU3MzhmNTZlYWZlNmZmYzE1ODNkZTgxMWFlMDU3ZmYzMDQ5MWM0MTc0OTA1OGJjNTI3NTMxN2U3MmU2NjkifX19
+gray_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDI4N2ViNTAxMzkxZjI3NTM4OWYxNjZlYzlmZWJlYTc1ZWM0YWU5NTFiODhiMzhjYWU4N2RmN2UyNGY0YyJ9fX0=
+light_gray_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UxYWM2ODM5OTNiZTM1NTEyZTFiZTMxZDFmNGY5OGU1ODNlZGIxNjU4YTllMjExOTJjOWIyM2I1Y2NjZGMzIn19fQ==
+cyan_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZmNmM3ZTdmZDUxNGNlMGFjYzY4NTkzMjI5ZTQwZmNjNDM1MmI4NDE2NDZlNGYwZWJjY2NiMGNlMjNkMTYifX19
+purple_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU1Mjg2N2FmZWYzOGJiMTRhMjZkMTQyNmM4YzBmMTE2YWQzNDc2MWFjZDkyZTdhYWUyYzgxOWEwZDU1Yjg1In19fQ==
+blue_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDllYzIyODE4ZDFmYmZjODE2N2ZiZTM2NzI4YjI4MjQwZTM0ZTE2NDY5YTI5MjlkMDNmZGY1MTFiZjJjYTEifX19
+brown_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU1YWQ2ZTVkYjU2OTJkODdmNTE1MTFmNGUwOWIzOWZmOWNjYjNkZTdiNDgxOWE3Mzc4ZmNlODU1M2I4In19fQ==
+green_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRlNTVhMzk1YTIyNDY0NDViNDVmOWE2ZDY4ODcyMzQ0YmJlYTU0ZjM2MmQ1MjlmYzViMGI4NTdlYTU4MzI2YiJ9fX0=
+red_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODM5YWY0NzdlYjYyNzgxNWY3MjNhNTY2MjU1NmVjOWRmY2JhYjVkNDk0ZDMzOGJkMjE0MjMyZjIzZTQ0NiJ9fX0=
+black_sheep_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzI2NTIwODNmMjhlZDFiNjFmOWI5NjVkZjFhYmYwMTBmMjM0NjgxYzIxNDM1OTUxYzY3ZDg4MzY0NzQ5ODIyIn19fQ==
 # ---------
 spider_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY0MjhjOTBjNDQ3NGMzNWFhZWZkMzk5YWFmMzFkZGVhOGFmMTBhNmM4NGIyMDMwYTYwMDYwODFkOWEzOTg4MSJ9fX0=
 skeleton_head_texture: minecraft:skeleton_skull
 zombie_head_texture: minecraft:zombie_head
 creeper_head_texture: minecraft:creeper_head
 powered_creeper_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDcxZjU5ZTNmOTVmZDBiOTlmOTY2MDYxYmQzN2VjNDFhYmRlNzQzMjE5MzBmZDQ0ZDUyODU0Y2I0MGQzZDEyMyJ9fX0=
-cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzhlNTQ4YzgxYjEwNzQ5NWE4OTM3NTc5NWRkNjEzNzc1NzdjYWEzMzE4MjBlMDJhYTU1ZmVkOTdmOGYxNDRmYSJ9fX0=
-chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ==
-ghast_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19
+# Коровы - 3
+temperate_cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGY4Y2UzOTE1YTIxMTY4ZDgzOTQyMTQ1NTJjZGI1NjUyZTg1NWU5ZTM4MjAwMWQ1OTY5NzJmZTNjMDA5ZWE3ZCJ9fX0=
+cold_cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQwNjg4ODVkMmRmYTNhMzA5MzYzYWYwYTg3ZGNhNmZiZjYyOWY3MTMwNzRmOTY4NjIxOWQ3YmE3YWY3MDA4ZCJ9fX0=
+warm_cow_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNiMzM3NmZhZjI4MWMxNGJhNDcyZDJlN2Y2YjZkMDE2OWU0YmMyMzc0ODM1YTlmOGQwNzg4ZTA0ZDgxMzQzZCJ9fX0=
+# ----------
+# Курицы - 3
+temperate_chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2FkM2RkMDA4M2ZhYTY5YTA2MmY5YWQ4MTQxOGY1YTU5NjE4MGJmMTU5MmU0YjhkMTMwM2IyMzBiNjRiYzc5ZSJ9fX0=
+cold_chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkxMWZjZDhiMjI2YTk4ZjhiNmQ2MDVmZjI3YTg4ZWQ5NzIzMGJiNzE2NzhlNGEwMDY2OTA5NWQ2OWQzZjJiNCJ9fX0=
+warm_chicken_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThjMjMxYmY0NjRmOWE2YzY3ODZhMjJhNGQxMTllYTVlNTA1NzYyNGM1YTM5MTQ3MGQzNWZhMmI2ZmZhNTE4MyJ9fX0=
+# ----------
+ghast_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjRhYjhhMjJlNzY4N2NjNGM3OGYzYjZmZjViMWViMDQ5MTdiNTFjZDNjZDdkYmNlMzYxNzExNjBiM2M3N2NlZCJ9fX0=
 slime_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UwY2ZmZDRkMzIwNjA2YmNkZGFlNmU5OWRlNWMyNGU1NzQzOGM3OTFkN2QzZmNhMjc1MTRlNDU4MjI5N2VhOCJ9fX0=
 zombie_pigman_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVmYjJkZjc1NGM5OGI3NDJkMzVlN2I4MWExZWVhYzlkMzdjNjlmYzhjZmVjZDNlOTFjNjc5ODM1MTZmIn19fQ==
 squid_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRmZTgzMmE4NGViYTI3ODQ0NDkxN2FkNjFjZDFiZGUxNWRiYjM3NDIxMzE2MzZmNmEyOTcwODI5YzBiMDVjYiJ9fX0=
-# Волки - 17
-white_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkNTFlYWMzOWVhOGJiNWYzMjdiNTljM2IxMjZjNTA2ZTQxZjdlNzA1YWViMmExOTc2ZjFhYmNjZThjN2QzNCJ9fX0=
-orange_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ5OWJjZDI1MzE1N2I3Zjc2N2FiNDc4N2ZjNmE0NGE2NmMxNjA0NzQyMWU0NDJiMzhiNGFkN2E1MjVhNjM4ZSJ9fX0=
-magenta_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjljYWY2NWJlZWYxY2FkMjMyNGQ1ZDQxNTc4OGU0ZThiM2ExYmI5M2VjMjk1ZDBjNzBkNjI3NTQxNmU2YWRiYyJ9fX0=
-light_blue_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM4MDFjYTM2MzFhMmRhZjhmOTNkZGUzYTQzMGQwN2IwOTc1NmUwN2FhYjZiMzlhYzE0YWQwOWM3NDI4N2Q3OCJ9fX0=
-yellow_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzEzMjZlZGQyYmU5ZTNjM2EyYTUxYzgyY2JkZDRiY2NiMzQ0NGZlNDFkOTNiYTgzODMwODQ2M2U3MDdhZmRkOSJ9fX0=
-lime_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM5MGZjNTU3ODYzNWMzOTQ0ZDlmOWJhNTZiZWJlMGE5OTY4YmI1ZGM5ODU3MDNhNWFkZWJjZTI2OGNiMmEzNSJ9fX0=
-pink_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI4ZGMyMGFkNTEwNDA1NGQ0ZGQwMjk5YTk4OTdjOGIzZDg1Y2JkYjAzZTk1MjAzNmU0ZmVjYzkwYmViZjhjOSJ9fX0=
-gray_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhMmE2ZDNkZDczZTQxMzc3ODk1MWRiZDgzMjczZTMyNDM4Y2Y0ZTZlZTRjYWMyOTQwYmRhYjg0OWZjZTQ2NSJ9fX0=
-light_gray_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZlM2FjOTBkYTcxNGQ5N2ZkZWE4MGZiYjk1NTE1N2EyMDMyZDVjOTIyYzc0MDljOTZhMWQ0MmQ5MTZhNjMxZSJ9fX0=
-cyan_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRjOGE2MmFiOWNlZGM1YTQzNTQ5YmIyYTJhYmM1ZTk5MjM3NzU5ZjU2OGQ2MTE3MGMzMTYzNzhmZjkzMmVmZSJ9fX0=
-purple_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjNkNzI0ZDEwMDQ2OWI1MDRiM2ZhZWQ2ZjlmNDkyNTI2NjhhZWZjYjFjMzZkNzQ2ZDEyNTRlYWFlM2IwYjdiNSJ9fX0=
-blue_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjliMjUzN2Q2NmQwNWI5NTMyM2FlOTkzYjBhOWNiZWNlODUwMWRhZTcwNjQwNWM4NGQzOWUwMTYxZjRiYjU5MCJ9fX0=
-brown_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWM1NmQxYzUxOGM5Mzk2MDFmOTdiODFlNWIyNmNiMjhhMDgyMDUzZTU5NzlkNWYzOWI3N2ZmYmY3MTgwMjJhOCJ9fX0=
-green_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODcyYjgwNWE4YjIxOGI2YTQ2YzlhYmYzZDJlM2VmZDNjMDA4M2EyNWI4M2NjNzE4YTg3N2FjMzc3YzgyYTJlOSJ9fX0=
-red_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDMwOTk4ZmRhNDJlZTVjYzE3NmMwMzk4Y2I0ZDMxZTA5OGRiZDJmZmMxZjZjZDk3ZDc0Y2QzZjc2NjU3NzE1OCJ9fX0=
-black_tamed_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjZjZGE4YzQxMWFjY2ViNTQwMGRhZDk0ODhiNjliNjQ1MzU5YzY4ZTY5OTI0NTlmYTY0ZTZlZjI0NzlmNmNlMyJ9fX0=
-wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTI4MjJhMzQ0OGNjMTZkN2YxY2Q4OWI4ODdjMTVkZDAzNTUxOTVkNTA1NDhmYTJjNGI0YjNiZDFkNDIwYzI3NSJ9fX0=
-# ----------
-red_mooshroom_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQ0YjNkZTY5OWVlOWU0ODJkN2U1MDZkYmM0YjQ2NDY0YjlhM2U5ZDA3M2NhNzk5NGJjYmNkM2VhYzI1MWE1OSJ9fX0=
-brown_mooshroom_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE1OTcwOTJjYjI1ZmU1YTkzMDZiOWFiOGU5OTVmYjJkZjQwYTZhNzZmMzE0NThkZmIyNzAxYzcxYWI5YWFlMyJ9fX0=
+red_mooshroom_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNlNzVhMDFhMzk4YTMxZTJkMjgyYmJiZmQyYjYxNzJkMmFlNjdjZDgzODc2OTQ4NDg1Yjg1ODgxYTE1YWYyMyJ9fX0=
+brown_mooshroom_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA1MWY1Y2Q1NTRkOTcyMDUwZGZjNTNjZWNkNWQ3NTMyNTQ4OTAwNGFkMDhiM2U1NDU3MmFjYWQ5NmIyNTM2MyJ9fX0=
 snow_golem_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTdlOTgzMWRhZjY4MWY4YzRjNDc3NWNiNDY1M2MzNGJlMjg5OGY4N2VmZDNiNTk4ZDU1NTUxOGYyZmFjNiJ9fX0=
 snowman_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWZkZmQxZjc1MzhjMDQwMjU4YmU3YTkxNDQ2ZGE4OWVkODQ1Y2M1ZWY3MjhlYjVlNjkwNTQzMzc4ZmNmNCJ9fX0=
 blaze_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzEyYWQ2MTQ0M2M4NWM4N2ViOWU4ZDg3NGQ4Zjg3MWU5OWE3MzA5OWJiOTlhMjcxNjI1ODhkNGM1Mjg3MzEwZSJ9fX0=
@@ -712,11 +736,11 @@ gold_rabbit_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dX
 salt_and_pepper_rabbit_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M0MzQ5ZmU5OTAyZGQ3NmMxMzYxZjhkNmExZjc5YmZmNmY0MzNmM2I3YjE4YTQ3MDU4ZjBhYTE2YjkwNTNmIn19fQ==
 killer_bunny_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWY5ODMzN2I4MjQyMjI5ZDk1ZGEyMzA5MDc1NTc4OTc3OGIxOGJmNWQwN2Q2MWY2MjBjZGJkYmJkMjlmYTYxNSJ9fX0=
 # -----------
-cave_spider_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2U4NTUzODBiNTQyZGQyMjI2NTk5NzhhOTY3Nzc2NGY5NTM3ZTc5YTZjNTA1MDU4MTEyMDFiODU3MDRlYjcwNSJ9fX0=
+cave_spider_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNjYzRhMzJkNDVkNzRlOGIxNGVmMWZmZDU1Y2Q1ZjM4MWEwNmQ0OTk5MDgxZDUyZWFlYTEyZTEzMjkzZTIwOSJ9fX0=
 guardian_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGZiNjc1Y2I1YTdlM2ZkMjVlMjlkYTgyNThmMjRmYzAyMGIzZmE5NTAzNjJiOGJjOGViMjUyZTU2ZTc0In19fQ==
 elder_guardian_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWM3OTc0ODJhMTRiZmNiODc3MjU3Y2IyY2ZmMWI2ZTZhOGI4NDEzMzM2ZmZiNGMyOWE2MTM5Mjc4YjQzNmIifX19
 silverfish_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE5MWRhYjgzOTFhZjVmZGE1NGFjZDJjMGIxOGZiZDgxOWI4NjVlMWE4ZjFkNjIzODEzZmE3NjFlOTI0NTQwIn19fQ==
-shulker_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI4MDg5YWE3ZGM5MzQ4MWJmNDg2ODNmYzJiYTVhNjZiYzk2Zjk3ZTY2ZGY0OTdkYjgzMTFhOTg0NDAxNDg4In19fQ==
+shulker_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjhjOTY1N2QyMzc3NzNjMzU5NmUyYzc0M2M5NGE1YmUzODQ5ZWJjMjhlMWQ0NjY3YjdhY2NkOTNhNDhiMDRhYiJ9fX0=
 polar_bear_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1ZDYwYTRkNzBlYzEzNmE2NTg1MDdjZTgyZTM0NDNjZGFhMzk1OGQ3ZmNhM2Q5Mzc2NTE3YzdkYjRlNjk1ZCJ9fX0=
 husk_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzMzODMxOGJjOTFhMzZjZDVhYjZhYTg4NWM5YTRlZTJiZGFjZGFhNWM2NmIyYTk5ZGZiMGE1NjA5ODNmMjQ4MCJ9fX0=
 stray_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjQ5M2ZiNDM1Yjk0ZTBmYzdjZmQxMDRjNzk2MmE5M2Q3ZWJjMjZkZjA2NGUxNTc4OTc3ZDRhZDI5ZGNkMmNmNCJ9fX0=
@@ -797,6 +821,22 @@ allay_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5t
 warden_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzZmNzQzNjFmYjAwNDkwYTBhOThlZWI4MTQ1NDRlY2RkNzc1Y2I1NTYzM2RiYjExNGU2MGQyNzAwNGNiMTAyMCJ9fX0=
 camel_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmE0Yzk1YmZhMGI2MTcyMjI1NTM4OTE0MWI1MDVjZjFhMzhiYWQ5YjBlZjU0M2RlNjE5ZjBjYzkyMjFlZDk3NCJ9fX0=
 sniffer_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU1YTgzNDFjNDc4YTEzNDMwMjk4MWU2YTc3NThlYTRlY2ZkOGQ2MmEwZGY0MDY3ODk3ZTc1NTAyZjliMjVkZSJ9fX0=
+armadillo_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDA0ZDkxNjRlOGY3NmRjZGRlNWY4ZDEwZmY2N2RlYjJkNjU4YTYwMDhkMjNjNDRmYjJmODQ0ZTA4NTkxYzAxZCJ9fX0=
+# Волки - 9
+pale_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM4M2YyNmY0MjAwMDRkYmQzZWYxNWFlMDUyMTM2MTg4N2UxZTRkN2ZjYzRmNGJmYjBmZTFmNTRiMTZlNzcxMSJ9fX0=
+chestnut_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzUxYTA3NDhiYTBmN2YwZGY0Y2RlM2Q5YjllZGNiMzVkYjIyNzNjZDQ1YjIxOTFhNWQyMzE1Y2Y4ZTc1NmNhZiJ9fX0=
+woods_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU4YzJhNmUxMDRhM2U5ZDczOTczMjZmMDFiZjI1ODYyZjBhYWY5ZTM4MzBkNDlkYmI5YjRhNDMwNTM1ODQwNCJ9fX0=
+ashen_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM5NzU0ZjBjZmY0MTk1NzhjZTk0YjVjODg2NjZkMjZkMDI3NWZmMmNjNzEzYjZlMzQ2MWI5MzViYWFjODQ0ZiJ9fX0=
+striped_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM0NmNmNDkyYWE1NTYxMjlmNzkxZTBiZWRjMDQ5NjQyNjNiNDk5NzYwYzk4OGFlMTc0MGZlMjc4Yzc2ZTEwYSJ9fX0=
+spotted_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2E4MjM1M2JjYzk1YTVhMDgxMjI3OTFlOTU3MmRlNzg1ZDlhZmRhZDZjZWJkYzUyMDUzMjQ2Yjk0YjZlODYxIn19fQ==
+rusty_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjcwNDc3N2NjNTM2Mzc1N2E4NjM3YTE3NjM4ZWRhODM0ODdiMDM2MTVjOTk5ZjEyYTJjZDY1MzU4YWZlNGEwOCJ9fX0=
+snowy_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ4NzdlNTJkOTM2MTI3OGEzNzM2ZmNhYWE1ZDcwZWIxNDc4NWMxYTk5NWJkYWJhNWRlOTFlZDg4NjQ1OWVhOCJ9fX0=
+black_wolf_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTgyZjY0NzMxNWE3OGM0ZTEwZTQwNTcxYTRiODI5OTZlZjllNmQzOGI1MjVmN2JhNzcwY2RmZThlZWVkYmFjNiJ9fX0=
+# ----------
+breeze_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI3NTcyOGFmN2U2YTI5Yzg4MTI1YjY3NWEzOWQ4OGFlOTkxOWJiNjFmZGMyMDAzMzdmZWQ2YWIwYzQ5ZDY1YyJ9fX0=
+bogged_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNiOTAwM2JhMmQwNTU2MmM3NTExOWI4YTYyMTg1YzY3MTMwZTkyODJmN2FjYmFjNGJjMjgyNGMyMWViOTVkOSJ9fX0=
+happy_ghast_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFhMzZjYjkzZDAxNjc1YzQ2MjJkZDVjOGQ4NzIxMTA5MTFlYzEyYzM3MmU4OWFmYThiYTAzODYyODY3ZjZmYiJ9fX0=
+ghastling_head_texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWZmNjAzYjRhZjIxZTMyYjU4NGM1NTgyM2JmNDUxN2ZhZDM4MWE0Nzg0MTdkMTEzYmM2MWFlMmM5ZWNiYTAyMCJ9fX0=
 
 # Жители -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
