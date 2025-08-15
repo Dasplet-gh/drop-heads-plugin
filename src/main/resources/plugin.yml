@@ -1,7 +1,7 @@
 name: DropHeads
 version: '${project.version}'
 main: me.matejpacan.dropheads.DropHeadsPlugin
-api-version: '1.21'
+api-version: '1.21.7'
 
 author: Dasplet
 description: Добавляет редкий шанс выпадения голов с мобов

@@ -18,6 +18,7 @@ import org.bukkit.entity.Axolotl;
 import org.bukkit.entity.Bee;
 import org.bukkit.entity.Cat;
 import org.bukkit.entity.Chicken;
+import org.bukkit.entity.Cow;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fox;
@@ -237,7 +238,7 @@ class MobDeathListener implements Listener {
             SkullMeta skullMeta = (SkullMeta) head.getItemMeta();
             // Запись текстуры головы в мета данные
             skullMeta.setOwningPlayer(killedPlayer);
-            // Установка мета данных голове
+            // Установка мета данных головы
             head.setItemMeta(skullMeta);
             // Добавление головы в дроп
             event.getDrops().add(head);
@@ -324,21 +325,19 @@ class MobDeathListener implements Listener {
                 }
             }
 
-            case COW -> { // Корова - 3 // Пока что новые варианты не работают
-                // Cow cow = (Cow) event.getEntity();
-                // Cow.Variant cowVariant = cow.getVariant();
+            case COW -> { // Корова - 3
+                Cow cow = (Cow) event.getEntity();
+                Cow.Variant cowVariant = cow.getVariant();
                 
-                // if (cowVariant == Cow.Variant.TEMPERATE) {
-                //     dropMobHead(event, "cow", "temperate_cow");
-                // } else if (cowVariant == Cow.Variant.COLD) {
-                //     dropMobHead(event, "cow", "cold_cow");
-                // } else if (cowVariant == Cow.Variant.WARM) {
-                //     dropMobHead(event, "cow", "warm_cow");
-                // } else {
-                //     dropMobHead(event, "cow", "temperate_cow");
-                // }
-
-                dropMobHead(event, "cow", "temperate_cow");
+                if (cowVariant == Cow.Variant.TEMPERATE) {
+                    dropMobHead(event, "cow", "temperate_cow");
+                } else if (cowVariant == Cow.Variant.COLD) {
+                    dropMobHead(event, "cow", "cold_cow");
+                } else if (cowVariant == Cow.Variant.WARM) {
+                    dropMobHead(event, "cow", "warm_cow");
+                } else {
+                    dropMobHead(event, "cow", "temperate_cow");
+                }
             }
 
             case CHICKEN -> { // Курица - 3

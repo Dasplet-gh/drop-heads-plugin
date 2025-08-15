@@ -6,7 +6,7 @@
 
     <groupId>me.matejpacan</groupId>
     <artifactId>DropHeads</artifactId>
-    <version>1.2.9</version>
+    <version>1.2.10</version>
     <packaging>jar</packaging>
 
     <name>DropHeads</name>
@@ -49,8 +49,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <release>21</release>
+                    <compilerArgs>
+                        <arg>-Xlint:-options</arg>
+                        <arg>-proc:none</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
