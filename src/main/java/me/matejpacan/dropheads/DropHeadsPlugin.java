@@ -1,5 +1,7 @@
 package me.matejpacan.dropheads;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
@@ -8,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.block.Skull;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -43,6 +46,7 @@ import org.bukkit.entity.Wolf;
 import org.bukkit.entity.ZombieVillager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -58,11 +62,16 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
     
     static FileConfiguration config;
 
+    static Map<String, String> textureToName = new HashMap<>();
+
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         config = getConfig();
         getServer().getPluginManager().registerEvents(new MobDeathListener(), this);
+        getServer().getPluginManager().registerEvents(new HeadBlockListener(), this);
         Objects.requireNonNull(getCommand("gethead")).setExecutor(this);
+        buildTextureToNameIndex();
         getLogger().info(config.getString("message_on_enable"));
     }
 
@@ -101,6 +110,27 @@ public final class DropHeadsPlugin extends JavaPlugin implements CommandExecutor
         }
 
         return false;
+    }
+
+    private void buildTextureToNameIndex() {
+        // Заполняем карту с нуля
+        textureToName.clear();
+        // Проходимся по всем ключам относящимся к текстурам голов
+        for (String key : config.getKeys(true)) {
+            if (key.endsWith(MobDeathListener.TAG_SUFFIX_HEAD_TEXTURE)) {
+                // Получаем строку ключа текстуры
+                String texture = config.getString(key);
+                // Если ключа нет, то пропускаем
+                if (texture == null) { continue; }
+                // Получаем базовый ключ моба, после чего получаем его название
+                String baseKey = key.substring(0, key.length() - MobDeathListener.TAG_SUFFIX_HEAD_TEXTURE.length());
+                String headName = config.getString(baseKey + MobDeathListener.TAG_SUFFIX_HEAD_NAME);
+                // Если имя найдено, записываем в карту
+                if (headName != null) {
+                    textureToName.put(texture, headName);
+                }
+            }
+        }
     }
 }
 
@@ -908,5 +938,47 @@ class MobDeathListener implements Listener {
         textureTag += villagerTag;
 
         return textureTag;
+    }
+}
+
+class HeadBlockListener implements Listener {
+
+    @EventHandler
+    public void onBlockDrop(BlockDropItemEvent event) {
+        switch (event.getBlockState().getType()) {
+            case PLAYER_HEAD, PLAYER_WALL_HEAD -> { // Ломаемый блок, это голова
+                // Получаем голову и её профиль
+                Skull skull = (Skull) event.getBlockState();
+                PlayerProfile profile = skull.getPlayerProfile();
+                // Проверка, пролучилось ли получить профиль головы
+                if (profile == null) { return; }
+                // Получение base64-кода текстуры головы из профиля
+                ProfileProperty texturesProperty = profile.getProperties().stream().filter(
+                    p -> p.getName().equals("textures")
+                ).findFirst().orElse(null);
+                // Проверка, пролучилось ли получить base64-код текстуры головы
+                if (texturesProperty == null) { return; }
+                // Получаем значение base64-кода и получаем название головы из карты используя код как ключ
+                String texture = texturesProperty.getValue();
+                String headName = DropHeadsPlugin.textureToName.get(texture);
+                // Проверка, пролучилось ли получить название головы
+                if (headName == null) { return; }
+                // Проходимся по всем выпавшим предметам
+                for (org.bukkit.entity.Item itemEntity : event.getItems()) {
+                    ItemStack stack = itemEntity.getItemStack();
+                    // Если выпавший с головы предмет это голова, то корректируем ей название
+                    if (stack.getType() == Material.PLAYER_HEAD) {
+                        // Получение метаданных стака головы
+                        SkullMeta meta = (SkullMeta) stack.getItemMeta();
+                        // Запись названия головы в мета данные
+                        meta.itemName(
+                            Component.text(DropHeadsPlugin.config.getString("head_name_starts") + " " + headName));
+                        // Установка мета данных голове
+                        stack.setItemMeta(meta);
+                    }
+                }
+            }
+            default -> {} // Ничего не делаем для других предметов
+        }
     }
 }
