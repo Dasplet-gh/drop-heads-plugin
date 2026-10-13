@@ -1,12 +1,10 @@
 <h1>
-  <img src="assets/skeleton-skull.png"
+  <img src="https://raw.githubusercontent.com/Dasplet-gh/drop-heads-plugin/2a1904418f7559524e19461b512a616ea0faeaa8/assets/skeleton-skull.png"
        width="32"
        height="32"
        alt="">
   DropHeads
 </h1>
-
-**Русский** | [English](README.en.md)
 
 Плагин для Minecraft, который добавляет выпадение голов мобов и игроков.
 
