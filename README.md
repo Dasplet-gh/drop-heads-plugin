@@ -1,8 +1,7 @@
 <h1>
-  <img src="https://raw.githubusercontent.com/Dasplet-gh/drop-heads-plugin/2a1904418f7559524e19461b512a616ea0faeaa8/assets/skeleton-skull.png"
+  <a name="dropheads-icon"><img src="https://raw.githubusercontent.com/Dasplet-gh/drop-heads-plugin/2a1904418f7559524e19461b512a616ea0faeaa8/assets/skeleton-skull.png"
        width="32"
-       height="32"
-       alt="">
+       alt=""></a>
   DropHeads
 </h1>
 
