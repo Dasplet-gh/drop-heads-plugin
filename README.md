@@ -24,9 +24,11 @@
 
 ## Установка
 
-1. Установите JDK 21 и Maven, затем выполните `mvn clean package` в папке проекта.
-2. Скопируйте файл `target/DropHeads-1.2.11.jar` в папку `plugins` вашего сервера.
+1. Скачайте `DropHeads-1.2.11.jar` из [релиза 1.2.11](https://github.com/Dasplet-gh/drop-heads-plugin/releases/tag/1.2.11).
+2. Скопируйте файл `DropHeads-1.2.11.jar` в папку `plugins` вашего сервера.
 3. Перезапустите сервер. При первом запуске плагин создаст файл `plugins/DropHeads/config.yml`.
+
+Для самостоятельной сборки установите JDK 21 и Maven, затем выполните `mvn clean package` в папке проекта. Готовый JAR появится в папке `target`.
 
 ## Настройка
 
